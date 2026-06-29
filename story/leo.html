@@ -1,0 +1,1863 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Leo and his Smartphone</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:Comic Sans MS, Arial, sans-serif;
+    background:#eef7ff;
+    color:#333;
+
+}
+
+
+/*==========================
+HEADER
+==========================*/
+
+header{
+
+    background:linear-gradient(135deg,#4facfe,#00c6ff);
+    color:white;
+    text-align:center;
+    padding:25px;
+    border-radius:0 0 35px 35px;
+    box-shadow:0 5px 15px rgba(0,0,0,.25);
+
+}
+
+header h1{
+
+    font-size:42px;
+    margin-bottom:20px;
+
+}
+
+.header-image{
+
+    width:240px;
+    max-width:90%;
+    margin:auto;
+    display:block;
+    border-radius:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,.25);
+
+}
+
+.home-btn{
+
+    margin-top:25px;
+
+    background:white;
+    color:#2196f3;
+
+    border:none;
+
+    padding:12px 25px;
+
+    border-radius:30px;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+.home-btn:hover{
+
+    transform:scale(1.05);
+
+}
+
+
+
+/*==========================
+GENERAL SECTION
+==========================*/
+
+.section{
+
+    width:92%;
+    max-width:1200px;
+
+    margin:35px auto;
+
+    background:white;
+
+    border-radius:25px;
+
+    padding:30px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+
+}
+
+.section h2{
+
+    color:#1976d2;
+    margin-bottom:25px;
+    font-size:34px;
+
+}
+
+
+
+/*==========================
+VOCABULARY CARDS
+==========================*/
+
+.words-container{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+
+    gap:25px;
+
+    margin-top:30px;
+
+}
+
+
+.word-card{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:18px;
+
+    box-shadow:0 4px 12px rgba(0,0,0,.15);
+
+    transition:.3s;
+
+}
+
+
+.word-card:hover{
+
+    transform:translateY(-5px);
+
+}
+
+
+.word-card img{
+
+    width:110px;
+    height:110px;
+    object-fit:contain;
+
+    margin-bottom:15px;
+
+}
+
+
+.word-card h3{
+
+    color:#1565c0;
+    margin-bottom:10px;
+
+}
+
+
+.word-card p{
+
+    font-size:15px;
+    min-height:70px;
+    margin-bottom:15px;
+
+}
+
+
+.listen-btn{
+
+    background:#ffd54f;
+
+    border:none;
+
+    border-radius:20px;
+
+    padding:10px 20px;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+}
+
+.listen-btn:hover{
+
+    background:#ffca28;
+
+}
+
+
+
+/*==========================
+RESPONSIVE
+==========================*/
+
+@media(max-width:768px){
+
+header h1{
+
+font-size:30px;
+
+}
+
+.section h2{
+
+font-size:28px;
+
+}
+
+.word-card img{
+
+width:90px;
+height:90px;
+
+}
+
+}
+
+/*==========================
+VOCABULARY GAME
+==========================*/
+
+.drag-container{
+display:flex;
+flex-direction:column;
+gap:30px;
+}
+
+.drag-images{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:20px;
+}
+
+.drag-item{
+width:110px;
+height:110px;
+object-fit:contain;
+cursor:grab;
+background:white;
+padding:10px;
+border-radius:20px;
+box-shadow:0 4px 10px rgba(0,0,0,.15);
+transition:.3s;
+}
+
+.drag-item:hover{
+transform:scale(1.08);
+}
+
+.definition-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:20px;
+}
+
+.drop-box{
+background:#f8fbff;
+border:3px dashed #64b5f6;
+border-radius:18px;
+padding:20px;
+min-height:90px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:17px;
+transition:.3s;
+}
+
+.correct{
+background:#c8f7c5;
+border:3px solid #2e7d32;
+}
+
+.incorrect{
+background:#f3d5ff;
+border:3px solid #ab47bc;
+}
+
+#vocabulary-result{
+margin-top:25px;
+font-size:24px;
+color:#1565c0;
+font-weight:bold;
+}
+
+/*==========================
+WARM UP
+==========================*/
+
+.warmup-box{
+background:#fff59d;
+padding:25px;
+border-radius:20px;
+font-size:20px;
+line-height:1.9;
+text-align:left;
+}
+
+/*==========================
+READING
+==========================*/
+
+.reading-buttons{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:15px;
+margin:25px 0;
+}
+
+.reading-buttons button{
+background:#42a5f5;
+color:white;
+border:none;
+padding:12px 22px;
+border-radius:25px;
+font-size:17px;
+font-weight:bold;
+cursor:pointer;
+transition:.3s;
+}
+
+.reading-buttons button:hover{
+transform:scale(1.08);
+}
+
+.story-box{
+background:#eef7ff;
+padding:30px;
+border-radius:20px;
+font-size:21px;
+line-height:2;
+text-align:left;
+box-shadow:0 4px 10px rgba(0,0,0,.12);
+}
+
+.story-box p{
+margin-bottom:15px;
+}
+
+/*==========================
+TRUE OR FALSE
+==========================*/
+
+.emoji-container{
+
+display:flex;
+
+justify-content:center;
+
+gap:60px;
+
+margin:30px 0;
+
+flex-wrap:wrap;
+
+}
+
+.emoji-box{
+
+background:#f5f5f5;
+
+padding:20px;
+
+border-radius:20px;
+
+box-shadow:0 4px 10px rgba(0,0,0,.12);
+
+}
+
+.emoji-box h3{
+
+margin-bottom:15px;
+
+color:#1565c0;
+
+}
+
+.drag-answer{
+
+font-size:45px;
+
+cursor:grab;
+
+margin:10px;
+
+display:inline-block;
+
+transition:.3s;
+
+}
+
+.drag-answer:hover{
+
+transform:scale(1.15);
+
+}
+
+.tf-table{
+
+width:100%;
+
+border-collapse:collapse;
+
+margin-top:25px;
+
+}
+
+.tf-table th{
+
+background:#42a5f5;
+
+color:white;
+
+padding:15px;
+
+font-size:18px;
+
+}
+
+.tf-table td{
+
+border:2px solid #ddd;
+
+padding:15px;
+
+font-size:18px;
+
+}
+
+.drop-answer{
+
+height:65px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+border:3px dashed #64b5f6;
+
+border-radius:15px;
+
+background:#fafafa;
+
+font-weight:bold;
+
+transition:.3s;
+
+}
+
+.correct-drop{
+
+background:rgba(120,220,120,.35);
+
+border:3px solid green;
+
+}
+
+.wrong-drop{
+
+background:rgba(220,180,255,.35);
+
+border:3px solid #ab47bc;
+
+}
+
+#tf-result{
+
+margin-top:25px;
+
+font-size:24px;
+
+font-weight:bold;
+
+color:#1565c0;
+
+}
+
+/*==========================
+ACTIVITY 2
+==========================*/
+
+
+.main-idea-container{
+
+display:flex;
+
+justify-content:center;
+
+gap:30px;
+
+flex-wrap:wrap;
+
+margin-top:30px;
+
+}
+
+
+
+.main-option{
+
+width:350px;
+
+min-height:180px;
+
+padding:30px;
+
+background:white;
+
+border-radius:25px;
+
+box-shadow:0 5px 15px rgba(0,0,0,.15);
+
+cursor:pointer;
+
+transition:.3s;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+}
+
+
+
+.main-option:hover{
+
+transform:scale(1.05);
+
+}
+
+
+
+.correct-option{
+
+background:rgba(100,180,255,.35)!important;
+
+}
+
+
+
+.wrong-option{
+
+background:rgba(255,80,80,.30)!important;
+
+}
+
+
+
+
+#main-result{
+
+margin-top:25px;
+
+font-size:24px;
+
+font-weight:bold;
+
+}
+
+
+
+
+
+/*==========================
+ACTIVITY 3
+==========================*/
+
+
+.inferential-grid{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:25px;
+
+margin-top:30px;
+
+}
+
+
+
+.infer-option{
+
+background:white;
+
+padding:25px;
+
+border-radius:25px;
+
+box-shadow:0 5px 15px rgba(0,0,0,.15);
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+
+
+.infer-option:hover{
+
+transform:scale(1.05);
+
+}
+
+
+
+.infer-correct{
+
+background:rgba(100,180,255,.35)!important;
+
+}
+
+
+
+.infer-wrong{
+
+background:rgba(255,80,80,.30)!important;
+
+}
+
+
+
+#infer-result{
+
+margin-top:25px;
+
+font-size:24px;
+
+font-weight:bold;
+
+}
+
+
+
+@media(max-width:800px){
+
+.inferential-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+
+<header>
+
+<h1>📱 Leo and his Smartphone</h1>
+
+<img
+src="../images/leo.jpg"
+alt="Leo"
+class="header-image">
+
+
+<button
+class="home-btn"
+onclick="goHome()">
+
+🏠 Back Home
+
+</button>
+
+</header>
+
+
+
+<!-- ===================================================== -->
+<!-- BEFORE READING -->
+<!-- ===================================================== -->
+
+<div class="section">
+
+<h2>Before Reading: Key Words</h2>
+
+<p>
+
+Learn the new words before reading the story.
+
+</p>
+
+<div class="words-container">
+
+
+
+<!-- SMARTPHONE -->
+
+<div class="word-card">
+
+<img
+src="../images/smartphone.jpg"
+alt="Smartphone">
+
+<h3>Smartphone</h3>
+
+<p>
+
+A smart mobile phone.
+
+</p>
+
+<button
+class="listen-btn"
+onclick="speak('Smartphone. A smart mobile phone.')">
+
+🔊 Listen
+
+</button>
+
+</div>
+
+
+
+<!-- PLAY -->
+
+<div class="word-card">
+
+<img
+src="../images/play.jpg"
+alt="Play">
+
+<h3>Play</h3>
+
+<p>
+
+Have fun.
+
+</p>
+
+<button
+class="listen-btn"
+onclick="speak('Play. Have fun.')">
+
+🔊 Listen
+
+</button>
+
+</div>
+
+
+
+<!-- WATCH -->
+
+<div class="word-card">
+
+<img
+src="../images/watch.jpg"
+alt="Watch">
+
+<h3>Watch</h3>
+
+<p>
+
+To look at something carefully, like TV or a movie.
+
+</p>
+
+<button
+class="listen-btn"
+onclick="speak('Watch. To look at something carefully, like television or a movie.')">
+
+🔊 Listen
+
+</button>
+
+</div>
+
+<!-- CALL -->
+
+<div class="word-card">
+
+<img
+src="../images/call.jpg"
+alt="Call">
+
+<h3>Call</h3>
+
+<p>
+
+To talk to someone on the phone.
+
+</p>
+
+<button
+class="listen-btn"
+onclick="speak('Call. To talk to someone on the phone.')">
+
+🔊 Listen
+
+</button>
+
+</div>
+
+
+
+<!-- HAPPY -->
+
+<div class="word-card">
+
+<img
+src="../images/happy.jpg"
+alt="Happy">
+
+<h3>Happy</h3>
+
+<p>
+
+Feeling very good and smiling.
+
+</p>
+
+<button
+class="listen-btn"
+onclick="speak('Happy. Feeling very good and smiling.')">
+
+🔊 Listen
+
+</button>
+
+</div>
+
+
+
+<!-- TIRED -->
+
+<div class="word-card">
+
+<img
+src="../images/tired.jpg"
+alt="Tired">
+
+<h3>Tired</h3>
+
+<p>
+
+When you need to rest or sleep because you have little energy.
+
+</p>
+
+<button
+class="listen-btn"
+onclick="speak('Tired. When you need to rest or sleep because you have little energy.')">
+
+🔊 Listen
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- ===================================================== -->
+<!-- VOCABULARY GAME -->
+<!-- ===================================================== -->
+
+<div class="section">
+
+<h2>Vocabulary Game</h2>
+
+<p>
+
+Drag each picture to the correct definition.
+
+</p>
+
+<div class="drag-container">
+
+<div class="drag-images">
+
+<img src="../images/smartphone.jpg"
+class="drag-item"
+id="smartphone"
+draggable="true">
+
+<img src="../images/play.jpg"
+class="drag-item"
+id="play"
+draggable="true">
+
+<img src="../images/watch.jpg"
+class="drag-item"
+id="watch"
+draggable="true">
+
+<img src="../images/call.jpg"
+class="drag-item"
+id="call"
+draggable="true">
+
+<img src="../images/happy.jpg"
+class="drag-item"
+id="happy"
+draggable="true">
+
+<img src="../images/tired.jpg"
+class="drag-item"
+id="tired"
+draggable="true">
+
+</div>
+
+
+
+<div class="definition-grid">
+
+<div class="drop-box"
+data-answer="play">
+
+Have fun.
+
+</div>
+
+<div class="drop-box"
+data-answer="tired">
+
+When you need to rest or sleep because you have little energy.
+
+</div>
+
+<div class="drop-box"
+data-answer="watch">
+
+To look at something carefully, like TV or a movie.
+
+</div>
+
+<div class="drop-box"
+data-answer="happy">
+
+Feeling very good and smiling.
+
+</div>
+
+<div class="drop-box"
+data-answer="call">
+
+To talk to someone on the phone.
+
+</div>
+
+<div class="drop-box"
+data-answer="smartphone">
+
+A smart mobile phone.
+
+</div>
+
+</div>
+
+</div>
+
+<h3 id="vocabulary-result"></h3>
+
+</div>
+
+<!-- ===================================================== -->
+<!-- WARM UP -->
+<!-- ===================================================== -->
+
+<div class="section warmup-section">
+
+<h2>Warm-up</h2>
+
+<div class="warmup-box">
+
+<h3>Interaction Activity</h3>
+
+<p>
+
+📱 <strong>Teacher:</strong> Look, what is it?
+
+</p>
+
+<p>
+
+Expected answer:
+
+<strong>Smartphone</strong> or <strong>Phone</strong>
+
+</p>
+
+<br>
+
+<p>
+
+🙋 Raise your hand if you play games on a phone!
+
+</p>
+
+<p>
+
+🙋 Raise your hand if you watch videos!
+
+</p>
+
+<br>
+
+<p>
+
+📖 <strong>Introducing the reading:</strong>
+
+"This is Leo. Leo loves his smartphone. Let's read about him!"
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- ===================================================== -->
+<!-- READING TIME -->
+<!-- ===================================================== -->
+
+<div class="section">
+
+<h2>Reading Time</h2>
+
+<h3>Leo and his Smartphone</h3>
+
+<div class="reading-buttons">
+
+<button onclick="playStory()">
+
+▶ Play
+
+</button>
+
+<button onclick="stopStory()">
+
+⏹ Stop
+
+</button>
+
+<button onclick="slowSpeed()">
+
+🐢 Slow
+
+</button>
+
+<button onclick="normalSpeed()">
+
+▶ Normal
+
+</button>
+
+<button onclick="fastSpeed()">
+
+⚡ Fast
+
+</button>
+
+</div>
+
+
+
+<div class="story-box" id="storyBox">
+
+<p>
+
+Leo has a new smartphone. It is blue.
+
+</p>
+
+<p>
+
+He plays video games on the phone. He is happy.
+
+</p>
+
+<p>
+
+He watches funny videos on the phone. He laughs!
+
+</p>
+
+<p>
+
+He calls his grandmother. He says,
+
+<b>"Hello Grandma!"</b>
+
+</p>
+
+<p>
+
+Mom says,
+
+<b>"Oh no! Leo, look at the time!"</b>
+
+</p>
+
+<p>
+
+But wait!
+
+It is 10 o'clock at night.
+
+</p>
+
+<p>
+
+Leo is still using the phone.
+
+</p>
+
+<p>
+
+The next day,
+
+Leo is very tired at school.
+
+</p>
+
+<p>
+
+His mom says,
+
+<b>"No more phone at night, Leo!"</b>
+
+</p>
+
+<p>
+
+Now Leo feels better.
+
+</p>
+
+</div>
+
+</div>
+
+<!-- ===================================================== -->
+<!-- ACTIVITY 1 : TRUE OR FALSE -->
+<!-- ===================================================== -->
+
+<div class="section">
+
+<h2>Activity 1: True or False</h2>
+
+<p>
+
+Read each sentence and drag 👍 for <b>True</b> or 👎 for <b>False</b>.
+
+</p>
+
+<div class="emoji-container">
+
+<div class="emoji-box">
+
+<h3>TRUE</h3>
+
+<span class="drag-answer"
+draggable="true"
+data-value="true">👍</span>
+
+<span class="drag-answer"
+draggable="true"
+data-value="true">👍</span>
+
+<span class="drag-answer"
+draggable="true"
+data-value="true">👍</span>
+
+</div>
+
+<div class="emoji-box">
+
+<h3>FALSE</h3>
+
+<span class="drag-answer"
+draggable="true"
+data-value="false">👎</span>
+
+<span class="drag-answer"
+draggable="true"
+data-value="false">👎</span>
+
+<span class="drag-answer"
+draggable="true"
+data-value="false">👎</span>
+
+</div>
+
+</div>
+
+
+
+<table class="tf-table">
+
+<tr>
+
+<th>Statement</th>
+
+<th>Answer</th>
+
+</tr>
+
+<tr>
+
+<td>
+
+The smartphone is red.
+
+</td>
+
+<td>
+
+<div
+class="drop-answer"
+data-answer="false">
+
+Drop Here
+
+</div>
+
+</td>
+
+</tr>
+
+
+
+<tr>
+
+<td>
+
+Leo calls his mother.
+
+</td>
+
+<td>
+
+<div
+class="drop-answer"
+data-answer="false">
+
+Drop Here
+
+</div>
+
+</td>
+
+</tr>
+
+
+
+<tr>
+
+<td>
+
+Leo is happy at school the next morning.
+
+</td>
+
+<td>
+
+<div
+class="drop-answer"
+data-answer="false">
+
+Drop Here
+
+</div>
+
+</td>
+
+</tr>
+
+</table>
+
+<h3 id="tf-result"></h3>
+
+</div>
+
+<!-- ===================================================== -->
+<!-- ACTIVITY 2 : MAIN IDEA -->
+<!-- ===================================================== -->
+
+
+<div class="section">
+
+<h2>Activity 2: Main Idea of this Story</h2>
+
+<p>
+
+Instruction: Choose the correct option.
+
+</p>
+
+
+<div class="main-idea-container">
+
+
+<div class="main-option"
+onclick="checkMainIdea(this,false)">
+
+
+<h3>Option A</h3>
+
+<p>
+
+Smartphones are only for playing games all day.
+
+</p>
+
+
+</div>
+
+
+
+<div class="main-option"
+onclick="checkMainIdea(this,true)">
+
+
+<h3>Option B</h3>
+
+<p>
+
+Smartphones are fun but we need to be healthy.
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+<h3 id="main-result"></h3>
+
+
+</div>
+
+
+
+
+
+<!-- ===================================================== -->
+<!-- ACTIVITY 3 : INFERENTIAL COMPREHENSION -->
+<!-- ===================================================== -->
+
+
+<div class="section">
+
+
+<h2>Activity 3: Inferential Comprehension</h2>
+
+
+<p>
+
+Why did Mom say: "No more phone at night"?
+
+</p>
+
+
+
+<div class="inferential-grid">
+
+
+
+<div class="infer-option"
+onclick="checkInferential(this,false)">
+
+<h3>Option A</h3>
+
+<p>
+
+His grandma calls him late.
+
+</p>
+
+</div>
+
+
+
+
+<div class="infer-option"
+onclick="checkInferential(this,false)">
+
+<h3>Option B</h3>
+
+<p>
+
+Leo likes to play games on the phone.
+
+</p>
+
+</div>
+
+
+
+
+<div class="infer-option"
+onclick="checkInferential(this,true)">
+
+<h3>Option C</h3>
+
+<p>
+
+Mom wants Leo to rest, sleep well and feel happy at school.
+
+</p>
+
+</div>
+
+
+
+</div>
+
+
+<h3 id="infer-result"></h3>
+
+
+</div>
+
+<script>
+
+// =====================================
+// BACK HOME
+// =====================================
+
+function goHome(){
+
+window.location.href="../index.html";
+
+}
+
+
+
+// =====================================
+// TEXT TO SPEECH VOCABULARY
+// =====================================
+
+
+function speak(text){
+
+speechSynthesis.cancel();
+
+let voice = new SpeechSynthesisUtterance(text);
+
+voice.lang="en-US";
+
+voice.rate=0.9;
+
+speechSynthesis.speak(voice);
+
+}
+
+
+
+// =====================================
+// VOCABULARY DRAG AND DROP
+// =====================================
+
+
+let draggedWord=null;
+
+
+document.querySelectorAll(".drag-item").forEach(item=>{
+
+
+item.addEventListener("dragstart",function(){
+
+draggedWord=this;
+
+});
+
+
+});
+
+
+
+document.querySelectorAll(".drop-box").forEach(box=>{
+
+
+box.addEventListener("dragover",function(e){
+
+e.preventDefault();
+
+});
+
+
+
+box.addEventListener("drop",function(){
+
+
+let correct=this.dataset.answer;
+
+
+if(draggedWord.id===correct){
+
+
+this.classList.remove("incorrect");
+
+this.classList.add("correct");
+
+
+this.innerHTML="✅ Correct!";
+
+
+document.getElementById("vocabulary-result").innerHTML=
+"Excellent! 🎉";
+
+
+}
+
+else{
+
+
+this.classList.remove("correct");
+
+this.classList.add("incorrect");
+
+
+document.getElementById("vocabulary-result").innerHTML=
+"❌ Try Again!";
+
+
+setTimeout(()=>{
+
+this.classList.remove("incorrect");
+
+},1000);
+
+
+}
+
+
+});
+
+
+});
+
+
+
+
+// =====================================
+// READING TIME
+// =====================================
+
+
+let speed=1;
+
+
+let storyText=
+
+"Leo has a new smartphone. It is blue. "+
+"He plays video games on the phone. He is happy. "+
+"He watches funny videos on the phone. He laughs! "+
+"He calls his grandmother. He says Hello Grandma. "+
+"Mom says Oh no Leo, look at the time. "+
+"But wait. It is 10 o'clock at night. "+
+"Leo is still using the phone. "+
+"The next day, Leo is very tired at school. "+
+"His mom says No more phone at night Leo. "+
+"Now Leo feels better.";
+
+
+
+function playStory(){
+
+
+speechSynthesis.cancel();
+
+
+let speech=new SpeechSynthesisUtterance(storyText);
+
+
+speech.lang="en-US";
+
+speech.rate=speed;
+
+
+speechSynthesis.speak(speech);
+
+
+}
+
+
+
+
+function stopStory(){
+
+speechSynthesis.cancel();
+
+}
+
+
+
+function slowSpeed(){
+
+speed=0.5;
+
+}
+
+
+
+function normalSpeed(){
+
+speed=1;
+
+}
+
+
+
+function fastSpeed(){
+
+speed=1.5;
+
+}
+
+
+
+// =====================================
+// ACTIVITY 1 TRUE OR FALSE
+// =====================================
+
+
+let selectedHand=null;
+
+
+
+document.querySelectorAll(".drag-answer").forEach(hand=>{
+
+
+hand.addEventListener("dragstart",function(){
+
+selectedHand=this;
+
+});
+
+
+});
+
+
+
+
+
+document.querySelectorAll(".drop-answer").forEach(zone=>{
+
+
+zone.addEventListener("dragover",function(e){
+
+e.preventDefault();
+
+});
+
+
+
+zone.addEventListener("drop",function(){
+
+
+let correct=this.dataset.answer;
+
+let student=selectedHand.dataset.value;
+
+
+
+if(correct===student){
+
+
+this.classList.remove("wrong-drop");
+
+this.classList.add("correct-drop");
+
+
+this.innerHTML="👍";
+
+
+document.getElementById("tf-result").innerHTML=
+"✅ Correct!";
+
+
+}
+
+else{
+
+
+this.classList.remove("correct-drop");
+
+this.classList.add("wrong-drop");
+
+
+this.innerHTML="❌";
+
+
+document.getElementById("tf-result").innerHTML=
+"❌ Try Again!";
+
+
+
+setTimeout(()=>{
+
+
+this.innerHTML="Drop Here";
+
+this.classList.remove("wrong-drop");
+
+
+},1000);
+
+
+
+}
+
+
+
+});
+
+
+});
+
+
+
+
+// =====================================
+// ACTIVITY 2 MAIN IDEA
+// =====================================
+
+
+function checkMainIdea(element,answer){
+
+
+let result=document.getElementById("main-result");
+
+
+document.querySelectorAll(".main-option").forEach(option=>{
+
+option.classList.remove("correct-option");
+
+option.classList.remove("wrong-option");
+
+});
+
+
+
+if(answer){
+
+
+element.classList.add("correct-option");
+
+
+result.innerHTML="✅ Excellent!";
+
+
+}
+
+else{
+
+
+element.classList.add("wrong-option");
+
+
+result.innerHTML="❌ Try Again!";
+
+
+}
+
+
+}
+
+
+
+// =====================================
+// ACTIVITY 3 INFERENTIAL
+// =====================================
+
+
+function checkInferential(element,answer){
+
+
+let result=document.getElementById("infer-result");
+
+
+
+document.querySelectorAll(".infer-option").forEach(option=>{
+
+option.classList.remove("infer-correct");
+
+option.classList.remove("infer-wrong");
+
+});
+
+
+
+if(answer){
+
+
+element.classList.add("infer-correct");
+
+
+result.innerHTML="✅ Excellent!";
+
+
+}
+
+else{
+
+
+element.classList.add("infer-wrong");
+
+
+result.innerHTML="❌ Try Again!";
+
+
+}
+
+
+}
+
+</script>
+
+
+</body.>
+
+</html>
+

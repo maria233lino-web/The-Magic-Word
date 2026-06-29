@@ -1,0 +1,1308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>The Galápagos Islands</title>
+
+<style>
+
+/*=========================================
+GENERAL
+=========================================*/
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+background:#f4f8ff;
+padding:20px;
+line-height:1.7;
+}
+
+.container{
+max-width:1150px;
+margin:auto;
+background:white;
+padding:30px;
+border-radius:20px;
+box-shadow:0 0 15px rgba(0,0,0,.12);
+}
+
+h1{
+text-align:center;
+color:#2c3e50;
+margin-bottom:20px;
+font-size:38px;
+}
+
+h2{
+color:#1f4e79;
+margin-top:45px;
+margin-bottom:18px;
+padding-bottom:8px;
+border-bottom:3px solid #1f4e79;
+}
+
+h3{
+color:#2c3e50;
+margin-bottom:10px;
+}
+
+h4{
+color:#1f4e79;
+margin-top:10px;
+margin-bottom:10px;
+}
+
+p{
+font-size:17px;
+}
+
+/*=========================================
+MAIN IMAGE
+=========================================*/
+
+.main-image{
+
+display:block;
+margin:auto;
+width:320px;
+height:320px;
+object-fit:cover;
+border-radius:20px;
+box-shadow:0 6px 15px rgba(0,0,0,.15);
+
+}
+
+/*=========================================
+VOCABULARY
+=========================================*/
+
+.vocabulary-grid{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:22px;
+margin-top:25px;
+
+}
+
+.vocab-card{
+
+background:#eef5ff;
+padding:18px;
+border-radius:18px;
+text-align:center;
+box-shadow:0 3px 10px rgba(0,0,0,.10);
+
+}
+
+.vocab-card img{
+
+width:100%;
+height:180px;
+object-fit:cover;
+border-radius:12px;
+
+}
+
+.audio-btn{
+
+margin-top:15px;
+padding:10px 18px;
+border:none;
+border-radius:8px;
+background:#4CAF50;
+color:white;
+cursor:pointer;
+font-weight:bold;
+transition:.3s;
+
+}
+
+.audio-btn:hover{
+
+background:#388E3C;
+
+}
+
+/*=========================================
+MATCHING GAME
+=========================================*/
+
+.matching-box{
+
+margin-top:35px;
+padding:25px;
+background:#fff8d8;
+border-radius:18px;
+
+}
+
+.match-grid{
+
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:25px;
+margin-top:25px;
+
+}
+
+.match-column{
+
+display:flex;
+flex-direction:column;
+gap:15px;
+
+}
+
+.match-btn{
+
+padding:14px;
+background:white;
+border:2px solid #9ec9ff;
+border-radius:10px;
+cursor:pointer;
+font-size:16px;
+transition:.3s;
+
+}
+
+.match-btn:hover{
+
+background:#dcecff;
+
+}
+
+.correct{
+
+background:rgba(76,175,80,.25);
+border:2px solid green;
+
+}
+
+.incorrect{
+
+background:rgba(155,89,182,.25);
+border:2px solid #9b59b6;
+
+}
+
+/*=========================================
+WARM UP
+=========================================*/
+
+.warmup{
+
+background:#fff8d8;
+padding:22px;
+border-radius:15px;
+margin-top:15px;
+
+}
+
+.warmup ul{
+
+margin-left:30px;
+margin-top:10px;
+
+}
+
+.warmup li{
+
+margin-bottom:10px;
+
+}
+
+/*=========================================
+READING
+=========================================*/
+
+.controls{
+
+text-align:center;
+margin:20px 0;
+
+}
+
+.controls button{
+
+margin:5px;
+padding:12px 18px;
+border:none;
+border-radius:8px;
+cursor:pointer;
+font-weight:bold;
+
+}
+
+.play{
+
+background:#4CAF50;
+color:white;
+
+}
+
+.stop{
+
+background:#e74c3c;
+color:white;
+
+}
+
+.speed{
+
+background:#3498db;
+color:white;
+
+}
+
+.reading-box{
+
+margin-top:20px;
+padding:25px;
+background:#fdfdfd;
+border-left:8px solid #4a90e2;
+border-radius:15px;
+font-size:18px;
+line-height:1.9;
+
+}
+
+/*=========================================
+ACTIVITY
+=========================================*/
+
+.activity-section{
+
+margin-top:45px;
+padding:25px;
+border-radius:18px;
+background:white;
+box-shadow:0 3px 10px rgba(0,0,0,.10);
+
+}
+
+.activity-instruction{
+
+font-size:18px;
+text-align:center;
+margin-bottom:20px;
+
+}
+
+.question-card{
+
+background:#eef5ff;
+padding:20px;
+border-radius:15px;
+margin-bottom:20px;
+
+}
+
+.answer-option{
+
+display:block;
+width:100%;
+padding:12px;
+margin-top:12px;
+border:2px solid #9ec9ff;
+background:white;
+border-radius:10px;
+cursor:pointer;
+font-size:16px;
+transition:.3s;
+
+}
+
+.answer-option:hover{
+
+background:#dcecff;
+
+}
+
+.feedback{
+
+margin-top:12px;
+font-size:18px;
+font-weight:bold;
+text-align:center;
+
+}
+
+.reset-btn{
+
+display:block;
+margin:25px auto;
+padding:12px 22px;
+background:#3498db;
+color:white;
+border:none;
+border-radius:10px;
+cursor:pointer;
+font-weight:bold;
+
+}
+
+.reset-btn:hover{
+
+background:#2878b5;
+
+}
+
+.correct-answer{
+
+background:rgba(76,175,80,.30);
+border:2px solid green;
+
+}
+
+.wrong-answer{
+
+background:rgba(155,89,182,.25);
+border:2px solid #9b59b6;
+
+}
+
+/*=========================================
+HOME BUTTON
+=========================================*/
+
+.home-btn{
+
+display:block;
+width:230px;
+margin:50px auto 20px;
+padding:15px;
+text-align:center;
+text-decoration:none;
+background:#2c3e50;
+color:white;
+border-radius:10px;
+font-weight:bold;
+font-size:18px;
+
+}
+
+.home-btn:hover{
+
+background:#1d2c3b;
+
+}
+
+</style>
+
+</head> 
+
+<body>
+
+<div class="container">
+
+<!--=========================================
+TITLE
+=========================================-->
+
+<h1>🏝️ The Galápagos Islands 🏝️</h1>
+
+<img
+src="../images/galapagos.jpg"
+alt="The Galápagos Islands"
+class="main-image">
+
+<p style="text-align:center;margin-top:15px;">
+
+Discover one of the most amazing natural places in Ecuador.
+
+</p>
+
+<!--=========================================
+BEFORE READING: KEY WORDS
+=========================================-->
+
+<h2>Before Reading: Key Words</h2>
+
+<div class="vocabulary-grid">
+
+<!-- ISLAND -->
+
+<div class="vocab-card">
+
+<img
+src="../images/island.jpg"
+alt="Island">
+
+<h4>Island</h4>
+
+<p>
+
+A piece of land with water around it.
+
+</p>
+
+<button
+class="audio-btn"
+onclick="speakVocabulary('Island. A piece of land with water around it.')">
+
+🔊 Listen
+
+</button>
+
+</div>
+
+<!-- TURTLE -->
+
+<div class="vocab-card">
+
+<img
+src="../images/turtle.jpg"
+alt="Turtle">
+
+<h4>Turtle</h4>
+
+<p>
+
+An animal with a shell.
+
+</p>
+
+<button
+class="audio-btn"
+onclick="speakVocabulary('Turtle. An animal with a shell.')">
+
+🔊 Listen
+
+</button>
+
+</div>
+
+<!-- OCEAN -->
+
+<div class="vocab-card">
+
+<img
+src="../images/ocean.jpg"
+alt="Ocean">
+
+<h4>Ocean</h4>
+
+<p>
+
+A very big area of water.
+
+</p>
+
+<button
+class="audio-btn"
+onclick="speakVocabulary('Ocean. A very big area of water.')">
+
+🔊 Listen
+
+</button>
+
+</div>
+
+<!-- BIRD -->
+
+<div class="vocab-card">
+
+<img
+src="../images/bird.jpg"
+alt="Bird">
+
+<h4>Bird</h4>
+
+<p>
+
+An animal that can fly.
+
+</p>
+
+<button
+class="audio-btn"
+onclick="speakVocabulary('Bird. An animal that can fly.')">
+
+🔊 Listen
+
+</button>
+
+</div>
+
+<!-- VOLCANO -->
+
+<div class="vocab-card">
+
+<img
+src="../images/volcano.jpg"
+alt="Volcano">
+
+<h4>Volcano</h4>
+
+<p>
+
+A mountain that can have lava.
+
+</p>
+
+<button
+class="audio-btn"
+onclick="speakVocabulary('Volcano. A mountain that can have lava.')">
+
+🔊 Listen
+
+</button>
+
+</div>
+
+<!-- NATURE -->
+
+<div class="vocab-card">
+
+<img
+src="../images/nature.jpg"
+alt="Nature">
+
+<h4>Nature</h4>
+
+<p>
+
+Plants and animals around us.
+
+</p>
+
+<button
+class="audio-btn"
+onclick="speakVocabulary('Nature. Plants and animals around us.')">
+
+🔊 Listen
+
+</button>
+
+</div>
+
+</div>
+
+<!-- =========================
+VOCABULARY MATCHING GAME
+========================= -->
+
+<div class="game-box">
+
+<h3>🎮 Vocabulary Matching Game</h3>
+
+<p>
+Match each word with its correct definition.
+</p>
+
+<div class="question">
+
+<h4>1. Island</h4>
+
+<button class="option-btn"
+onclick="checkVocabulary(this,true)">
+A piece of land with water around it.
+</button>
+
+<button class="option-btn"
+onclick="checkVocabulary(this,false)">
+An animal with a shell.
+</button>
+
+<button class="option-btn"
+onclick="checkVocabulary(this,false)">
+A mountain with lava.
+</button>
+
+<p class="feedback"></p>
+
+</div>
+
+
+
+<div class="question">
+
+<h4>2. Turtle</h4>
+
+<button class="option-btn"
+onclick="checkVocabulary(this,false)">
+A bird that flies.
+</button>
+
+<button class="option-btn"
+onclick="checkVocabulary(this,true)">
+An animal with a shell.
+</button>
+
+<button class="option-btn"
+onclick="checkVocabulary(this,false)">
+A very big area of water.
+</button>
+
+<p class="feedback"></p>
+
+</div>
+
+
+
+<div class="question">
+
+<h4>3. Ocean</h4>
+
+<button class="option-btn"
+onclick="checkVocabulary(this,false)">
+Plants and animals around us.
+</button>
+
+<button class="option-btn"
+onclick="checkVocabulary(this,false)">
+A volcano.
+</button>
+
+<button class="option-btn"
+onclick="checkVocabulary(this,true)">
+A very big area of water.
+</button>
+
+<p class="feedback"></p>
+
+</div>
+
+
+
+<div class="question">
+
+<h4>4. Bird</h4>
+
+<button class="option-btn"
+onclick="checkVocabulary(this,true)">
+An animal that can fly.
+</button>
+
+<button class="option-btn"
+onclick="checkVocabulary(this,false)">
+An island.
+</button>
+
+<button class="option-btn"
+onclick="checkVocabulary(this,false)">
+A turtle.
+</button>
+
+<p class="feedback"></p>
+
+</div>
+
+
+
+<div class="question">
+
+<h4>5. Volcano</h4>
+
+<button class="option-btn"
+onclick="checkVocabulary(this,false)">
+Nature around us.
+</button>
+
+<button class="option-btn"
+onclick="checkVocabulary(this,true)">
+A mountain that can have lava.
+</button>
+
+<button class="option-btn"
+onclick="checkVocabulary(this,false)">
+A bird.
+</button>
+
+<p class="feedback"></p>
+
+</div>
+
+
+
+<div class="question">
+
+<h4>6. Nature</h4>
+
+<button class="option-btn"
+onclick="checkVocabulary(this,false)">
+A turtle.
+</button>
+
+<button class="option-btn"
+onclick="checkVocabulary(this,false)">
+A large ocean.
+</button>
+
+<button class="option-btn"
+onclick="checkVocabulary(this,true)">
+Plants and animals around us.
+</button>
+
+<p class="feedback"></p>
+
+</div>
+
+<button
+class="reset-btn"
+onclick="resetVocabulary()">
+
+🔄 Try Again
+
+</button>
+
+</div>
+
+
+
+<!-- =========================
+WARM-UP
+========================= -->
+
+<h2>Warm-up</h2>
+
+<div class="warmup">
+
+<h3>Let's Talk! 🌎</h3>
+
+<ul>
+
+<li>Do you like wild animals?</li>
+
+<li>Look at this happy sea friend.</li>
+
+<li>Raise your hand if you have seen a turtle!</li>
+
+<li>Where is the ocean in Ecuador?</li>
+
+</ul>
+
+</div>
+
+<!-- =========================
+READING TIME
+========================= -->
+
+<h2>📖 Reading Time</h2>
+
+<div class="controls">
+
+<button
+class="play"
+onclick="playStory()">
+
+▶ Play
+
+</button>
+
+<button
+class="stop"
+onclick="stopStory()">
+
+⏹ Stop
+
+</button>
+
+<button
+class="speed"
+onclick="changeSpeed(0.75)">
+
+🐢 Slow
+
+</button>
+
+<button
+class="speed"
+onclick="changeSpeed(1)">
+
+▶ Normal
+
+</button>
+
+<button
+class="speed"
+onclick="changeSpeed(1.35)">
+
+⚡ Fast
+
+</button>
+
+</div>
+
+
+
+<div
+class="reading-box"
+id="storyText">
+
+<h3>A Special Location</h3>
+
+<p>
+
+The Galápagos Islands are in Ecuador.
+
+</p>
+
+<p>
+
+They are beautiful islands in the ocean.
+
+</p>
+
+<p>
+
+Many unique and beautiful animals live there safely.
+
+</p>
+
+<br>
+
+<h3>The Giant Turtle</h3>
+
+<p>
+
+The giant turtle is a famous animal in the Galápagos.
+
+</p>
+
+<p>
+
+There are also birds, sea animals, and plants.
+
+</p>
+
+<p>
+
+The islands have volcanoes and amazing nature.
+
+</p>
+
+<br>
+
+<h3 style="text-align:center;">
+
+🌎 The End 🌎
+
+</h3>
+
+</div>
+
+
+
+<!-- =====================================================
+SECTION ACTIVITY
+===================================================== -->
+
+<section
+class="activity-section"
+id="activity1">
+
+<h2>
+✅ Literal and Inferential Comprehension
+</h2>
+
+<p class="activity-instruction">
+
+Choose <strong>True</strong> or <strong>False</strong>.
+
+</p>
+
+<button
+class="reset-btn"
+onclick="resetActivity()">
+
+🔄 Try Again
+
+</button>
+
+
+
+<!-- Question 1 -->
+
+<div class="question-card">
+
+<p>
+
+<strong>
+1. The Galápagos Islands are in Ecuador.
+</strong>
+
+</p>
+
+<button
+class="answer-option"
+onclick="checkAnswer(this,true)">
+
+True
+
+</button>
+
+<button
+class="answer-option"
+onclick="checkAnswer(this,false)">
+
+False
+
+</button>
+
+<p class="feedback"></p>
+
+</div>
+
+
+
+<!-- Question 2 -->
+
+<div class="question-card">
+
+<p>
+
+<strong>
+2. The giant turtle is not famous in the Galápagos Islands.
+</strong>
+
+</p>
+
+<button
+class="answer-option"
+onclick="checkAnswer(this,false)">
+
+True
+
+</button>
+
+<button
+class="answer-option"
+onclick="checkAnswer(this,true)">
+
+False
+
+</button>
+
+<p class="feedback"></p>
+
+</div>
+
+
+
+<!-- Question 3 -->
+
+<div class="question-card">
+
+<p>
+
+<strong>
+3. People visit Galápagos because it is a special place.
+</strong>
+
+</p>
+
+<button
+class="answer-option"
+onclick="checkAnswer(this,true)">
+
+True
+
+</button>
+
+<button
+class="answer-option"
+onclick="checkAnswer(this,false)">
+
+False
+
+</button>
+
+<p class="feedback"></p>
+
+</div>
+
+<!-- Question 4 -->
+
+<div class="question-card">
+
+<p>
+
+<strong>
+4. Galápagos has many animals and nature.
+</strong>
+
+</p>
+
+<button
+class="answer-option"
+onclick="checkAnswer(this,true)">
+
+True
+
+</button>
+
+<button
+class="answer-option"
+onclick="checkAnswer(this,false)">
+
+False
+
+</button>
+
+<p class="feedback"></p>
+
+</div>
+
+
+
+<!-- Question 5 -->
+
+<div class="question-card">
+
+<p>
+
+<strong>
+5. The text is about the Galápagos and their nature.
+</strong>
+
+</p>
+
+<button
+class="answer-option"
+onclick="checkAnswer(this,true)">
+
+True
+
+</button>
+
+<button
+class="answer-option"
+onclick="checkAnswer(this,false)">
+
+False
+
+</button>
+
+<p class="feedback"></p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+BACK HOME
+========================= -->
+
+<a
+href="../index.html"
+class="home-btn">
+
+🏠 Back Home
+
+</a>
+
+</div>
+
+
+
+<script>
+
+/*=========================================
+VOCABULARY AUDIO
+=========================================*/
+
+function speakVocabulary(text){
+
+speechSynthesis.cancel();
+
+const speech=new SpeechSynthesisUtterance(text);
+
+speech.lang="en-US";
+
+speech.rate=1;
+
+speechSynthesis.speak(speech);
+
+}
+
+
+
+/*=========================================
+VOCABULARY GAME
+=========================================*/
+
+function checkVocabulary(button,correct){
+
+const question=button.closest(".question");
+
+const feedback=question.querySelector(".feedback");
+
+if(question.dataset.finished==="true"){
+return;
+}
+
+if(correct){
+
+button.style.background="rgba(76,175,80,.35)";
+button.style.borderColor="green";
+
+feedback.innerHTML="✅ Correct!";
+feedback.style.color="green";
+
+question.dataset.finished="true";
+
+question.querySelectorAll(".option-btn").forEach(btn=>{
+
+btn.disabled=true;
+
+});
+
+}else{
+
+button.style.background="rgba(170,120,255,.35)";
+button.style.borderColor="#8a4fff";
+
+feedback.innerHTML="❌ Try Again!";
+feedback.style.color="#7b2cbf";
+
+}
+
+}
+
+
+
+function resetVocabulary(){
+
+document.querySelectorAll(".question").forEach(question=>{
+
+question.dataset.finished="false";
+
+question.querySelector(".feedback").innerHTML="";
+
+question.querySelectorAll(".option-btn").forEach(btn=>{
+
+btn.disabled=false;
+
+btn.style.background="white";
+
+btn.style.borderColor="#8ecae6";
+
+});
+
+});
+
+}
+
+
+
+/*=========================================
+READING
+=========================================*/
+
+let speed=1;
+
+function playStory(){
+
+speechSynthesis.cancel();
+
+const text=document.getElementById("storyText").innerText;
+
+const speech=new SpeechSynthesisUtterance(text);
+
+speech.lang="en-US";
+
+speech.rate=speed;
+
+speechSynthesis.speak(speech);
+
+}
+
+function stopStory(){
+
+speechSynthesis.cancel();
+
+}
+
+function changeSpeed(value){
+
+speed=value;
+
+}
+
+
+
+/*=========================================
+TRUE / FALSE ACTIVITY
+=========================================*/
+
+function checkAnswer(button,correct){
+
+const card=button.closest(".question-card");
+
+const feedback=card.querySelector(".feedback");
+
+if(card.dataset.finished==="true"){
+return;
+}
+
+if(correct){
+
+button.style.background="rgba(76,175,80,.35)";
+button.style.borderColor="green";
+
+feedback.innerHTML="✅ Correct!";
+feedback.style.color="green";
+
+card.dataset.finished="true";
+
+card.querySelectorAll(".answer-option").forEach(btn=>{
+
+btn.disabled=true;
+
+});
+
+}else{
+
+button.style.background="rgba(170,120,255,.35)";
+button.style.borderColor="#8a4fff";
+
+feedback.innerHTML="❌ Try Again!";
+feedback.style.color="#7b2cbf";
+
+}
+
+}
+
+
+
+function resetActivity(){
+
+document.querySelectorAll("#activity1 .question-card").forEach(card=>{
+
+card.dataset.finished="false";
+
+card.querySelector(".feedback").innerHTML="";
+
+card.querySelectorAll(".answer-option").forEach(btn=>{
+
+btn.disabled=false;
+
+btn.style.background="white";
+
+btn.style.borderColor="#9ec9ff";
+
+});
+
+});
+
+}
+
+</script>
+
+</body>
+
+</html>
