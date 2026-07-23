@@ -65,7 +65,6 @@ MAIN IMAGE
 =========================*/
 
 .main-image{
-
 display:block;
 margin:auto;
 width:300px;
@@ -73,7 +72,6 @@ height:300px;
 object-fit:cover;
 border-radius:20px;
 box-shadow:0 6px 15px rgba(0,0,0,.15);
-
 }
 
 /*=========================
@@ -81,42 +79,33 @@ VOCABULARY
 =========================*/
 
 .vocabulary-grid{
-
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:22px;
 margin-top:25px;
-
 }
 
 .vocab-card{
-
 background:#eef5ff;
 padding:18px;
 border-radius:18px;
 text-align:center;
 box-shadow:0 3px 10px rgba(0,0,0,.10);
-
 }
 
 .vocab-card img{
-
 width:100%;
 height:180px;
 object-fit:cover;
 border-radius:12px;
-
 }
 
 .vocab-card h4{
-
 margin-top:10px;
 color:#1f4e79;
-
 }
 
 .audio-btn{
-
 margin-top:15px;
 padding:10px 18px;
 border:none;
@@ -125,39 +114,10 @@ background:#4CAF50;
 color:white;
 cursor:pointer;
 font-weight:bold;
-
 }
 
 .audio-btn:hover{
-
 background:#388E3C;
-
-}
-
-/*=========================
-WARM UP
-=========================*/
-
-.warmup{
-
-background:#fff8d8;
-padding:22px;
-border-radius:15px;
-margin-top:15px;
-
-}
-
-.warmup ul{
-
-margin-left:30px;
-margin-top:10px;
-
-}
-
-.warmup li{
-
-margin-bottom:10px;
-
 }
 
 /*=========================
@@ -165,46 +125,35 @@ READING
 =========================*/
 
 .controls{
-
 text-align:center;
 margin:20px 0;
-
 }
 
 .controls button{
-
 margin:5px;
 padding:12px 18px;
 border:none;
 border-radius:8px;
 cursor:pointer;
 font-weight:bold;
-
 }
 
 .play{
-
 background:#4CAF50;
 color:white;
-
 }
 
 .stop{
-
 background:#e74c3c;
 color:white;
-
 }
 
 .speed{
-
 background:#3498db;
 color:white;
-
 }
 
 .reading-box{
-
 margin-top:20px;
 padding:25px;
 background:#fdfdfd;
@@ -212,33 +161,27 @@ border-left:8px solid #4a90e2;
 border-radius:15px;
 font-size:18px;
 line-height:1.9;
-
 }
 
 /*=========================
-ACTIVITIES
+ACTIVITIES & FEEDBACK
 =========================*/
 
 .activity-section{
-
 margin-top:45px;
 padding:25px;
 border-radius:18px;
 background:white;
 box-shadow:0 3px 10px rgba(0,0,0,.10);
-
 }
 
 .activity-instruction{
-
 font-size:18px;
 text-align:center;
 margin-bottom:20px;
-
 }
 
 .reset-btn{
-
 display:block;
 margin:20px auto;
 padding:12px 22px;
@@ -248,20 +191,16 @@ border:none;
 border-radius:10px;
 cursor:pointer;
 font-weight:bold;
-
 }
 
 .question-card{
-
 background:#eef5ff;
 padding:20px;
 border-radius:15px;
 margin-bottom:20px;
-
 }
 
 .answer-option{
-
 display:block;
 width:100%;
 padding:12px;
@@ -272,21 +211,45 @@ border-radius:10px;
 cursor:pointer;
 font-size:16px;
 transition:.3s;
-
 }
 
 .answer-option:hover{
-
 background:#dcecff;
-
 }
 
 .feedback{
-
 margin-top:12px;
-font-size:18px;
+font-size:17px;
 font-weight:bold;
+padding:10px;
+border-radius:8px;
+display:none;
+}
 
+.correct-fb{
+display:block;
+color:#155724;
+background-color:#d4edda;
+border-left:5px solid #28a745;
+}
+
+.incorrect-fb{
+display:block;
+color:#721c24;
+background-color:#f8d7da;
+border-left:5px solid #dc3545;
+}
+
+.hint-box{
+background:#FFF3CD;
+color:#856404;
+padding:6px 10px;
+border-radius:6px;
+margin-top:6px;
+font-size:14px;
+font-weight:normal;
+display:inline-block;
+border-left:4px solid #FFC107;
 }
 
 /*=========================
@@ -294,16 +257,13 @@ UMBRELLA GAME
 =========================*/
 
 .umbrella-grid{
-
 display:grid;
 grid-template-columns:repeat(3,1fr);
 gap:20px;
 margin-top:30px;
-
 }
 
 .umbrella-card{
-
 background:#dfe9ff;
 border:2px solid #4a6fa5;
 border-radius:15px;
@@ -311,44 +271,82 @@ padding:18px;
 text-align:center;
 cursor:pointer;
 transition:.3s;
-
 }
 
 .umbrella-card:hover{
-
 transform:translateY(-5px);
-
 }
 
 .umbrella-card img{
-
 width:140px;
 height:140px;
 object-fit:contain;
 margin:10px auto;
-
 }
 
 .umbrella-card p{
-
 margin-top:15px;
 font-size:15px;
 line-height:1.5;
-
 }
 
 .correct-card{
-
 background:rgba(76,175,80,.35);
 border:3px solid green;
-
 }
 
 .incorrect-card{
-
 background:rgba(255,165,0,.35);
 border:3px solid orange;
+}
 
+/*=========================
+RÚBRICA DE ESTRELLAS
+=========================*/
+
+.result-box{
+margin-top:30px;
+padding:20px;
+border-radius:15px;
+text-align:center;
+font-size:18px;
+font-weight:bold;
+display:none;
+}
+
+.excellent-result{
+background:#FFFDE7;
+border:3px solid #F1C40F;
+color:#7D6608;
+}
+
+.good-result{
+background:#FFF8D6;
+border:3px solid #F1C40F;
+color:#9A7D0A;
+}
+
+.practice-result{
+background:#FFE8E8;
+border:3px solid #E74C3C;
+color:#922B21;
+}
+
+.stars{
+font-size:35px;
+margin:10px;
+}
+
+.retry-button{
+background:#3498db;
+color:white;
+padding:10px 20px;
+font-size:16px;
+border:none;
+border-radius:10px;
+margin-top:10px;
+cursor:pointer;
+font-weight:bold;
 }
 
 /*=========================
@@ -356,7 +354,6 @@ HOME BUTTON
 =========================*/
 
 .home-btn{
-
 display:block;
 width:230px;
 margin:50px auto 20px;
@@ -368,13 +365,10 @@ color:white;
 border-radius:10px;
 font-weight:bold;
 font-size:18px;
-
 }
 
 .home-btn:hover{
-
 background:#1d2c3b;
-
 }
 
 </style>
@@ -409,126 +403,42 @@ VOCABULARY
 <div class="vocabulary-grid">
 
 <div class="vocab-card">
-
-<img src="../images/coast.jpg"
-alt="Coast">
-
+<img src="../images/coast.jpg" alt="Coast">
 <h4>Coast</h4>
-
-<p>
-The land next to the sea or ocean.
-</p>
-
-<button
-class="audio-btn"
-onclick="speakVocabulary('Coast. The land next to the sea or ocean.')">
-
+<p>The land next to the sea or ocean.</p>
+<button class="audio-btn" onclick="speakVocabulary('Coast. The land next to the sea or ocean.')">
 🔊 Listen
-
 </button>
-
 </div>
 
-
-
 <div class="vocab-card">
-
-<img src="../images/encebollado.jpg"
-alt="Encebollado">
-
+<img src="../images/encebollado.jpg" alt="Encebollado">
 <h4>Encebollado</h4>
-
-<p>
-A traditional Ecuadorian fish soup.
-</p>
-
-<button
-class="audio-btn"
-onclick="speakVocabulary('Encebollado. A traditional Ecuadorian fish soup.')">
-
+<p>A traditional Ecuadorian fish soup.</p>
+<button class="audio-btn" onclick="speakVocabulary('Encebollado. A traditional Ecuadorian fish soup.')">
 🔊 Listen
-
 </button>
-
 </div>
 
-
-
-
 <div class="vocab-card">
-
-<img src="../images/bike.jpg"
-alt="Bike">
-
+<img src="../images/bike.jpg" alt="Bike">
 <h4>Bike</h4>
-
-<p>
-A vehicle with two wheels.
-</p>
-
-<button
-class="audio-btn"
-onclick="speakVocabulary('Bike. A vehicle with two wheels.')">
-
+<p>A vehicle with two wheels.</p>
+<button class="audio-btn" onclick="speakVocabulary('Bike. A vehicle with two wheels.')">
 🔊 Listen
-
 </button>
-
 </div>
-
-
-
 
 <div class="vocab-card">
-
-<img src="../images/student.jpg"
-alt="Student">
-
+<img src="../images/student.jpg" alt="Student">
 <h4>Student</h4>
-
-<p>
-A person who studies at school.
-</p>
-
-<button
-class="audio-btn"
-onclick="speakVocabulary('Student. A person who studies at school.')">
-
+<p>A person who studies at school.</p>
+<button class="audio-btn" onclick="speakVocabulary('Student. A person who studies at school.')">
 🔊 Listen
-
 </button>
-
 </div>
 
 </div>
-
-
-<!-- =========================
-WARM-UP
-========================= -->
-
-<h2>Warm-Up</h2>
-
-<div class="warmup">
-
-<p>
-<strong>Answer the following questions.</strong>
-</p>
-
-<ul>
-
-<li>Do you have a bicycle?</li>
-
-<li>What is your favorite color?</li>
-
-<li>What traditional Ecuadorian food do you like?</li>
-
-<li>What do you use when it rains?</li>
-
-</ul>
-
-</div>
-
 
 
 <!-- =========================
@@ -539,111 +449,39 @@ READING TIME
 
 <div class="controls">
 
-<button
-class="play"
-onclick="speakStory()">
-
-▶ Play Story
-
-</button>
-
-
-<button
-class="stop"
-onclick="stopStory()">
-
-⏹ Stop
-
-</button>
-
-
-<button
-class="speed"
-onclick="changeSpeed(0.75)">
-
-0.75x
-
-</button>
-
-
-<button
-class="speed"
-onclick="changeSpeed(1)">
-
-1x
-
-</button>
-
-
-<button
-class="speed"
-onclick="changeSpeed(1.25)">
-
-1.25x
-
-</button>
-
-
-<button
-class="speed"
-onclick="changeSpeed(1.5)">
-
-1.5x
-
-</button>
+<button class="play" onclick="speakStory()">▶ Play Story</button>
+<button class="stop" onclick="stopStory()">⏹ Stop</button>
+<button class="speed" onclick="changeSpeed(0.75)">0.75x</button>
+<button class="speed" onclick="changeSpeed(1)">1x</button>
+<button class="speed" onclick="changeSpeed(1.25)">1.25x</button>
+<button class="speed" onclick="changeSpeed(1.5)">1.5x</button>
 
 </div>
 
-
-
-<div
-class="reading-box"
-id="storyText">
+<div class="reading-box" id="storyText">
 
 My name is Ana.
-
 <br><br>
-
 I am 9 years old.
-
 <br><br>
-
 I live in Guayaquil, on the coast of Ecuador.
-
 <br><br>
-
 I am a student.
-
 <br><br>
-
 I go to school every day because I like my school.
-
 <br><br>
-
 I have a small family.
-
 <br><br>
-
 My favorite color is blue.
-
 <br><br>
-
 I like chifles and hot encebollado.
-
 <br><br>
-
 I have a beautiful red bike.
-
 <br><br>
-
 I play with my family and I am happy.
-
 <br><br>
-
 I also like English because English is fun.
-
 <br><br>
-
 <strong>The End.</strong>
 
 </div>
@@ -660,115 +498,41 @@ ACTIVITY 1
 Read the story and choose the correct answer.
 </p>
 
-<button
-class="reset-btn"
-onclick="resetActivity1()">
+<button class="reset-btn" onclick="resetActivity1()">🔄 Try Again</button>
 
-🔄 Try Again
-
-</button>
-
-
-<div class="question-card">
-
+<div class="question-card" id="a1q1">
 <p><strong>1. Where does Ana live?</strong></p>
-
-<button class="answer-option"
-onclick="checkActivity1(this,false)">
-Quito
-</button>
-
-<button class="answer-option"
-onclick="checkActivity1(this,true)">
-Guayaquil
-</button>
-
-<button class="answer-option"
-onclick="checkActivity1(this,false)">
-Cuenca
-</button>
-
-<p class="feedback"></p>
-
+<button class="answer-option" onclick="checkActivity1(this, false, 'a1q1', '💡 Hint: She lives on the coast of Ecuador!')">Quito</button>
+<button class="answer-option" onclick="checkActivity1(this, true, 'a1q1', '')">Guayaquil</button>
+<button class="answer-option" onclick="checkActivity1(this, false, 'a1q1', '💡 Hint: She lives on the coast of Ecuador!')">Cuenca</button>
+<div class="feedback"></div>
 </div>
 
-
-
-<div class="question-card">
-
+<div class="question-card" id="a1q2">
 <p><strong>2. How old is Ana?</strong></p>
-
-<button class="answer-option"
-onclick="checkActivity1(this,false)">
-10 years old
-</button>
-
-<button class="answer-option"
-onclick="checkActivity1(this,false)">
-8 years old
-</button>
-
-<button class="answer-option"
-onclick="checkActivity1(this,true)">
-9 years old
-</button>
-
-<p class="feedback"></p>
-
+<button class="answer-option" onclick="checkActivity1(this, false, 'a1q2', '💡 Hint: She is one year younger than 10!')">10 years old</button>
+<button class="answer-option" onclick="checkActivity1(this, false, 'a1q2', '💡 Hint: She is one year older than 8!')">8 years old</button>
+<button class="answer-option" onclick="checkActivity1(this, true, 'a1q2', '')">9 years old</button>
+<div class="feedback"></div>
 </div>
 
-
-
-<div class="question-card">
-
+<div class="question-card" id="a1q3">
 <p><strong>3. What is Ana's favorite color?</strong></p>
-
-<button class="answer-option"
-onclick="checkActivity1(this,true)">
-Blue
-</button>
-
-<button class="answer-option"
-onclick="checkActivity1(this,false)">
-Red
-</button>
-
-<button class="answer-option"
-onclick="checkActivity1(this,false)">
-Green
-</button>
-
-<p class="feedback"></p>
-
+<button class="answer-option" onclick="checkActivity1(this, true, 'a1q3', '')">Blue</button>
+<button class="answer-option" onclick="checkActivity1(this, false, 'a1q3', '💡 Hint: Red is the color of her bike, not her favorite color!')">Red</button>
+<button class="answer-option" onclick="checkActivity1(this, false, 'a1q3', '💡 Hint: Think about the color of the ocean!')">Green</button>
+<div class="feedback"></div>
 </div>
 
-
-
-<div class="question-card">
-
+<div class="question-card" id="a1q4">
 <p><strong>4. What food does Ana like?</strong></p>
-
-<button class="answer-option"
-onclick="checkActivity1(this,false)">
-Pizza
-</button>
-
-<button class="answer-option"
-onclick="checkActivity1(this,true)">
-Chifles and encebollado
-</button>
-
-<button class="answer-option"
-onclick="checkActivity1(this,false)">
-Hamburgers
-</button>
-
-<p class="feedback"></p>
-
+<button class="answer-option" onclick="checkActivity1(this, false, 'a1q4', '💡 Hint: She likes traditional Ecuadorian food!')">Pizza</button>
+<button class="answer-option" onclick="checkActivity1(this, true, 'a1q4', '')">Chifles and encebollado</button>
+<button class="answer-option" onclick="checkActivity1(this, false, 'a1q4', '💡 Hint: She likes hot fish soup and plantain chips!')">Hamburgers</button>
+<div class="feedback"></div>
 </div>
 
 </section>
-
 
 
 <!-- =====================================================
@@ -783,112 +547,38 @@ ACTIVITY 2
 Choose the correct meaning.
 </p>
 
-<button
-class="reset-btn"
-onclick="resetActivity2()">
+<button class="reset-btn" onclick="resetActivity2()">🔄 Try Again</button>
 
-🔄 Try Again
-
-</button>
-
-
-
-<div class="question-card">
-
+<div class="question-card" id="a2q1">
 <p><strong>1. What is a coast?</strong></p>
-
-<button class="answer-option"
-onclick="checkActivity2(this,false)">
-A mountain
-</button>
-
-<button class="answer-option"
-onclick="checkActivity2(this,true)">
-Land next to the sea
-</button>
-
-<button class="answer-option"
-onclick="checkActivity2(this,false)">
-A school
-</button>
-
-<p class="feedback"></p>
-
+<button class="answer-option" onclick="checkActivity2(this, false, 'a2q1', '💡 Hint: The coast is close to water and ocean!')">A mountain</button>
+<button class="answer-option" onclick="checkActivity2(this, true, 'a2q1', '')">Land next to the sea</button>
+<button class="answer-option" onclick="checkActivity2(this, false, 'a2q1', '💡 Hint: The coast is a geographic area near sea!')">A school</button>
+<div class="feedback"></div>
 </div>
 
-
-
-<div class="question-card">
-
+<div class="question-card" id="a2q2">
 <p><strong>2. What is encebollado?</strong></p>
-
-<button class="answer-option"
-onclick="checkActivity2(this,false)">
-A fruit
-</button>
-
-<button class="answer-option"
-onclick="checkActivity2(this,false)">
-A dessert
-</button>
-
-<button class="answer-option"
-onclick="checkActivity2(this,true)">
-A traditional fish soup
-</button>
-
-<p class="feedback"></p>
-
+<button class="answer-option" onclick="checkActivity2(this, false, 'a2q2', '💡 Hint: Encebollado is served hot in a bowl!')">A fruit</button>
+<button class="answer-option" onclick="checkActivity2(this, false, 'a2q2', '💡 Hint: It is a savory main dish, not sweet!')">A dessert</button>
+<button class="answer-option" onclick="checkActivity2(this, true, 'a2q2', '')">A traditional fish soup</button>
+<div class="feedback"></div>
 </div>
 
-
-
-<div class="question-card">
-
+<div class="question-card" id="a2q3">
 <p><strong>3. Who is a student?</strong></p>
-
-<button class="answer-option"
-onclick="checkActivity2(this,true)">
-A person who studies
-</button>
-
-<button class="answer-option"
-onclick="checkActivity2(this,false)">
-A doctor
-</button>
-
-<button class="answer-option"
-onclick="checkActivity2(this,false)">
-A firefighter
-</button>
-
-<p class="feedback"></p>
-
+<button class="answer-option" onclick="checkActivity2(this, true, 'a2q3', '')">A person who studies</button>
+<button class="answer-option" onclick="checkActivity2(this, false, 'a2q3', '💡 Hint: A student goes to school to learn!')">A doctor</button>
+<button class="answer-option" onclick="checkActivity2(this, false, 'a2q3', '💡 Hint: Think about children at school!')">A firefighter</button>
+<div class="feedback"></div>
 </div>
 
-
-
-<div class="question-card">
-
+<div class="question-card" id="a2q4">
 <p><strong>4. What is a bike?</strong></p>
-
-<button class="answer-option"
-onclick="checkActivity2(this,false)">
-A plane
-</button>
-
-<button class="answer-option"
-onclick="checkActivity2(this,true)">
-A vehicle with two wheels
-</button>
-
-<button class="answer-option"
-onclick="checkActivity2(this,false)">
-A boat
-</button>
-
-<p class="feedback"></p>
-
+<button class="answer-option" onclick="checkActivity2(this, false, 'a2q4', '💡 Hint: A bike stays on the ground!')">A plane</button>
+<button class="answer-option" onclick="checkActivity2(this, true, 'a2q4', '')">A vehicle with two wheels</button>
+<button class="answer-option" onclick="checkActivity2(this, false, 'a2q4', '💡 Hint: You ride a bike on roads or paths!')">A boat</button>
+<div class="feedback"></div>
 </div>
 
 </section>
@@ -902,112 +592,67 @@ ACTIVITY 3
 <h2>☂️ Activity 3: Find the Magic Umbrella</h2>
 
 <p class="activity-instruction">
-
 Read the descriptions carefully and choose the umbrella that best represents Ana's story.
-
 </p>
 
-<button
-class="reset-btn"
-onclick="resetUmbrellaGame()">
-
-🔄 Try Again
-
-</button>
-
+<button class="reset-btn" onclick="resetUmbrellaGame()">🔄 Try Again</button>
 
 <div class="umbrella-grid">
 
-
 <!-- UMBRELLA A -->
-
-<div
-class="umbrella-card"
-onclick="checkUmbrella(this,false)">
-
+<div class="umbrella-card" onclick="checkUmbrella(this, false, '💡 Hint: Look closely! Ana lives on the coast, not in the mountains.')">
 <h3>Umbrella A</h3>
-
-<img
-src="../images/umbrella_a.jpg"
-alt="umbrella_a">
-
-<p>
-
-Ana has a red bike and plays with friends.
-
-</p>
-
+<img src="../images/umbrella_a.jpg" alt="umbrella_a">
+<p>Ana has a red bike and plays with friends.</p>
 </div>
-
-
 
 <!-- UMBRELLA B -->
-
-<div
-class="umbrella-card"
-onclick="checkUmbrella(this,true)">
-
+<div class="umbrella-card" onclick="checkUmbrella(this, true, '')">
 <h3>Umbrella B</h3>
-
-<img
-src="../images/umbrella_b.jpg"
-alt="umbrella_b">
-
-<p>
-
-Ana is a happy girl.
-She likes her school, her food and her bike.
-
-</p>
-
+<img src="../images/umbrella_b.jpg" alt="umbrella_b">
+<p>Ana is a happy girl. She likes her school, her food and her bike.</p>
 </div>
-
-
 
 <!-- UMBRELLA C -->
-
-<div
-class="umbrella-card"
-onclick="checkUmbrella(this,false)">
-
+<div class="umbrella-card" onclick="checkUmbrella(this, false, '💡 Hint: Ana eats encebollado, not pizza!')">
 <h3>Umbrella C</h3>
-
-<img
-src="../images/umbrella_c.jpg"
-alt="umbrella_c">
-
-<p>
-
-Ana lives in the mountains and eats pizza.
-
-</p>
-
+<img src="../images/umbrella_c.jpg" alt="umbrella_c">
+<p>Ana lives in the mountains and eats pizza.</p>
 </div>
 
 </div>
 
-
-<p
-id="umbrellaFeedback"
-class="feedback"
-style="text-align:center;margin-top:20px;">
-</p>
+<div id="umbrellaFeedback" class="feedback" style="text-align:center;margin-top:20px;"></div>
 
 </section>
 
+
+<!-- =====================================================
+FINAL SCORE / RÚBRICA DE ESTRELLAS
+===================================================== -->
+
+<section class="activity-section">
+<button onclick="calculateFinalScore()" style="width:100%; padding:15px; font-size:18px; background:#1f4e79; color:white; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">
+🏆 Check Final Mission Score!
+</button>
+
+<div id="finalScoreResult" class="result-box">
+<div>🎉 Mission Completed!</div>
+<div id="finalScoreText"></div>
+<div id="finalStars" class="stars"></div>
+<div id="finalResultMessage"></div>
+<button class="retry-button" onclick="location.reload()">🔄 Play Again</button>
+</div>
+</section>
 
 
 <!-- =====================================================
 BACK HOME
 ===================================================== -->
 
-<a 
-href="../index.html"
-class="home-btn">
+<a href="../index.html" class="home-btn">🏠 Back Home</a>
 
-🏠 Back Home
-
-</a>
+</div>
 
 <script>
 
@@ -1018,236 +663,217 @@ READING & VOCABULARY AUDIO
 let speed = 1;
 
 function speakVocabulary(text){
-
     speechSynthesis.cancel();
-
     const speech = new SpeechSynthesisUtterance(text);
-
     speech.lang = "en-US";
     speech.rate = 1;
-
     speechSynthesis.speak(speech);
-
 }
 
+function playFeedbackAudio(text){
+    speechSynthesis.cancel();
+    let cleanText = text.replace(/<br>/gi, " ").replace(/<[^>]*>/g, "").replace(/[✅❌💡🎉⭐🏆]/g, "");
+    let speech = new SpeechSynthesisUtterance(cleanText);
+    speech.lang = "en-US";
+    speech.rate = 0.95;
+    speechSynthesis.speak(speech);
+}
 
 function speakStory(){
-
     speechSynthesis.cancel();
-
     const text = document.getElementById("storyText").innerText;
-
     const speech = new SpeechSynthesisUtterance(text);
-
     speech.lang = "en-US";
     speech.rate = speed;
-
     speechSynthesis.speak(speech);
-
 }
-
 
 function stopStory(){
-
     speechSynthesis.cancel();
-
 }
-
 
 function changeSpeed(value){
-
     speed = value;
-
 }
 
+/*=========================================
+TRACKING SCORES FOR RUBRIC
+=========================================*/
+
+let userFirstAttempts = {
+    a1q1: null, a1q2: null, a1q3: null, a1q4: null,
+    a2q1: null, a2q2: null, a2q3: null, a2q4: null,
+    act3: null
+};
 
 /*=========================================
 ACTIVITY 1
 =========================================*/
 
-function checkActivity1(button,correct){
-
+function checkActivity1(button, correct, qId, hintText){
     const card = button.closest(".question-card");
     const feedback = card.querySelector(".feedback");
 
-    if(card.dataset.finished==="true"){
-        return;
+    if(card.dataset.finished === "true") return;
+
+    if(userFirstAttempts[qId] === null){
+        userFirstAttempts[qId] = correct;
     }
 
     if(correct){
-
-        button.style.background="rgba(76,175,80,.35)";
-        button.style.borderColor="green";
-
-        feedback.innerHTML="✅ Correct!";
-        feedback.style.color="green";
-
-        card.dataset.finished="true";
-
-        card.querySelectorAll(".answer-option").forEach(option=>{
-
-            option.disabled=true;
-
-        });
-
-    }else{
-
-        button.style.background="rgba(255,165,0,.35)";
-        button.style.borderColor="orange";
-
-        feedback.innerHTML="❌ Try Again!";
-        feedback.style.color="orange";
-
+        button.style.background = "rgba(76,175,80,.35)";
+        button.style.borderColor = "green";
+        feedback.className = "feedback correct-fb";
+        feedback.innerHTML = "✅ Correct! Great job!";
+        card.dataset.finished = "true";
+        card.querySelectorAll(".answer-option").forEach(option => option.disabled = true);
+    } else {
+        button.style.background = "rgba(255,165,0,.35)";
+        button.style.borderColor = "orange";
+        feedback.className = "feedback incorrect-fb";
+        feedback.innerHTML = "❌ Try Again!<br><span class='hint-box'>" + hintText + "</span>";
     }
 
+    playFeedbackAudio(feedback.innerText);
 }
-
-
 
 function resetActivity1(){
-
-document.querySelectorAll("#activity1 .question-card").forEach(card=>{
-
-card.dataset.finished="false";
-
-card.querySelector(".feedback").innerHTML="";
-
-card.querySelectorAll(".answer-option").forEach(btn=>{
-
-btn.disabled=false;
-
-btn.style.background="white";
-
-btn.style.borderColor="#9ec9ff";
-
-});
-
-});
-
+    document.querySelectorAll("#activity1 .question-card").forEach(card => {
+        card.dataset.finished = "false";
+        let fb = card.querySelector(".feedback");
+        fb.style.display = "none";
+        fb.innerHTML = "";
+        card.querySelectorAll(".answer-option").forEach(btn => {
+            btn.disabled = false;
+            btn.style.background = "white";
+            btn.style.borderColor = "#9ec9ff";
+        });
+    });
 }
-
-
 
 /*=========================================
 ACTIVITY 2
 =========================================*/
 
-function checkActivity2(button,correct){
+function checkActivity2(button, correct, qId, hintText){
+    const card = button.closest(".question-card");
+    const feedback = card.querySelector(".feedback");
 
-const card=button.closest(".question-card");
+    if(card.dataset.finished === "true") return;
 
-const feedback=card.querySelector(".feedback");
+    if(userFirstAttempts[qId] === null){
+        userFirstAttempts[qId] = correct;
+    }
 
-if(card.dataset.finished==="true"){
-return;
+    if(correct){
+        button.style.background = "rgba(76,175,80,.35)";
+        button.style.borderColor = "green";
+        feedback.className = "feedback correct-fb";
+        feedback.innerHTML = "✅ Correct! Excellent vocabulary skills!";
+        card.dataset.finished = "true";
+        card.querySelectorAll(".answer-option").forEach(option => option.disabled = true);
+    } else {
+        button.style.background = "rgba(255,165,0,.35)";
+        button.style.borderColor = "orange";
+        feedback.className = "feedback incorrect-fb";
+        feedback.innerHTML = "❌ Try Again!<br><span class='hint-box'>" + hintText + "</span>";
+    }
+
+    playFeedbackAudio(feedback.innerText);
 }
-
-if(correct){
-
-button.style.background="rgba(76,175,80,.35)";
-button.style.borderColor="green";
-
-feedback.innerHTML="✅ Correct!";
-feedback.style.color="green";
-
-card.dataset.finished="true";
-
-card.querySelectorAll(".answer-option").forEach(option=>{
-
-option.disabled=true;
-
-});
-
-}else{
-
-button.style.background="rgba(255,165,0,.35)";
-button.style.borderColor="orange";
-
-feedback.innerHTML="❌ Try Again!";
-feedback.style.color="orange";
-
-}
-
-}
-
-
 
 function resetActivity2(){
-
-document.querySelectorAll("#activity2 .question-card").forEach(card=>{
-
-card.dataset.finished="false";
-
-card.querySelector(".feedback").innerHTML="";
-
-card.querySelectorAll(".answer-option").forEach(btn=>{
-
-btn.disabled=false;
-
-btn.style.background="white";
-
-btn.style.borderColor="#9ec9ff";
-
-});
-
-});
-
+    document.querySelectorAll("#activity2 .question-card").forEach(card => {
+        card.dataset.finished = "false";
+        let fb = card.querySelector(".feedback");
+        fb.style.display = "none";
+        fb.innerHTML = "";
+        card.querySelectorAll(".answer-option").forEach(btn => {
+            btn.disabled = false;
+            btn.style.background = "white";
+            btn.style.borderColor = "#9ec9ff";
+        });
+    });
 }
-
-
 
 /*=========================================
 ACTIVITY 3
 =========================================*/
 
-let umbrellaAnswered=false;
+let umbrellaAnswered = false;
 
-function checkUmbrella(card,correct){
+function checkUmbrella(card, correct, hintText){
+    if(umbrellaAnswered) return;
 
-if(umbrellaAnswered){
-return;
+    const feedback = document.getElementById("umbrellaFeedback");
+
+    if(userFirstAttempts.act3 === null){
+        userFirstAttempts.act3 = correct;
+    }
+
+    if(correct){
+        card.classList.add("correct-card");
+        feedback.className = "feedback correct-fb";
+        feedback.innerHTML = "✅ Excellent! Umbrella B best describes Ana's story.";
+        umbrellaAnswered = true;
+    } else {
+        card.classList.add("incorrect-card");
+        feedback.className = "feedback incorrect-fb";
+        feedback.innerHTML = "❌ Try Again!<br><span class='hint-box'>" + hintText + "</span>";
+    }
+
+    playFeedbackAudio(feedback.innerText);
 }
-
-const feedback=document.getElementById("umbrellaFeedback");
-
-if(correct){
-
-card.classList.add("correct-card");
-
-feedback.innerHTML="✅ Excellent! umbrella_b is the correct answer.";
-
-feedback.style.color="green";
-
-umbrellaAnswered=true;
-
-}else{
-
-card.classList.add("incorrect-card");
-
-feedback.innerHTML="❌ Wrong umbrella. Try Again.";
-
-feedback.style.color="orange";
-
-}
-
-}
-
-
 
 function resetUmbrellaGame(){
+    umbrellaAnswered = false;
+    document.querySelectorAll(".umbrella-card").forEach(card => {
+        card.classList.remove("correct-card");
+        card.classList.remove("incorrect-card");
+    });
+    let fb = document.getElementById("umbrellaFeedback");
+    fb.style.display = "none";
+    fb.innerHTML = "";
+}
 
-umbrellaAnswered=false;
+/*=========================================
+CALCULATE FINAL SCORE & RÚBRICA
+=========================================*/
 
-document.querySelectorAll(".umbrella-card").forEach(card=>{
+function calculateFinalScore() {
+    let score = 0;
+    let totalQuestions = Object.keys(userFirstAttempts).length; // 9 preguntas en total
 
-card.classList.remove("correct-card");
+    Object.keys(userFirstAttempts).forEach(k => {
+        if(userFirstAttempts[k] === true) score++;
+    });
 
-card.classList.remove("incorrect-card");
+    let resBox = document.getElementById("finalScoreResult");
+    let starsEl = document.getElementById("finalStars");
+    let scoreTextEl = document.getElementById("finalScoreText");
+    let msgEl = document.getElementById("finalResultMessage");
 
-});
+    scoreTextEl.innerText = "Correct First Try Answers: " + score + " / " + totalQuestions;
 
-document.getElementById("umbrellaFeedback").innerHTML="";
+    if(score >= 7) {
+        resBox.className = "result-box excellent-result";
+        starsEl.innerText = "⭐⭐⭐";
+        msgEl.innerText = "Outstanding! You are an Ana's Story Master!";
+        playFeedbackAudio("Outstanding! You are an Ana's Story Master!");
+    } else if(score >= 4) {
+        resBox.className = "result-box good-result";
+        starsEl.innerText = "⭐⭐";
+        msgEl.innerText = "Good job! You completed most activities correctly!";
+        playFeedbackAudio("Good job! You completed most activities correctly!");
+    } else {
+        resBox.className = "result-box practice-result";
+        starsEl.innerText = "⭐";
+        msgEl.innerText = "Keep practicing! Read the story again and try once more!";
+        playFeedbackAudio("Keep practicing! Read the story again and try once more!");
+    }
 
+    resBox.style.display = "block";
+    resBox.scrollIntoView({ behavior: 'smooth' });
 }
 
 </script>
