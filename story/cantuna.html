@@ -4,93 +4,61 @@
 <head>
 
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 
 <title>The Legend of Cantuña</title>
 
-
 <style>
 
-
 *{
-
 margin:0;
 padding:0;
 box-sizing:border-box;
 font-family:Arial, Helvetica, sans-serif;
-
 }
-
-
 
 body{
-
 background:#f4f8ff;
 padding:20px;
-
+line-height:1.7;
 }
 
-
-
 .container{
-
 max-width:1150px;
 margin:auto;
 background:white;
 padding:30px;
 border-radius:20px;
 box-shadow:0 0 15px rgba(0,0,0,.15);
-
 }
 
-
-
 h1{
-
 text-align:center;
 font-size:38px;
 color:#2c3e50;
 margin-bottom:25px;
-
 }
-
-
 
 h2{
-
 color:#1f4e79;
-margin-top:40px;
+margin-top:45px;
+margin-bottom:18px;
 border-bottom:3px solid #1f4e79;
 padding-bottom:8px;
-
 }
-
-
 
 h3{
-
 color:#34495e;
-
+margin-bottom:10px;
 }
-
-
 
 p{
-
 font-size:17px;
-line-height:1.6;
-
 }
-
-
 
 /* MAIN IMAGE */
 
-
 .main-image{
-
 display:block;
 width:320px;
 height:320px;
@@ -98,61 +66,39 @@ object-fit:cover;
 margin:auto;
 border-radius:20px;
 box-shadow:0 5px 15px rgba(0,0,0,.2);
-
 }
-
-
-
 
 /* VOCABULARY */
 
-
 .vocabulary-grid{
-
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:20px;
 margin-top:25px;
-
 }
 
-
-
 .vocab-card{
-
 background:#eef5ff;
 padding:18px;
 border-radius:18px;
 text-align:center;
-
+box-shadow:0 3px 10px rgba(0,0,0,.10);
 }
 
-
-
 .vocab-card img{
-
 width:100%;
 height:160px;
 object-fit:cover;
 border-radius:12px;
-
 }
 
-
-
 .vocab-card h4{
-
 font-size:22px;
 color:#1f4e79;
 margin:10px;
-
 }
 
-
-
-
 .audio-btn{
-
 background:#4CAF50;
 color:white;
 border:none;
@@ -160,74 +106,80 @@ padding:10px 18px;
 border-radius:10px;
 cursor:pointer;
 margin-top:10px;
-
+font-weight:bold;
 }
-
-
 
 .audio-btn:hover{
-
 background:#388e3c;
-
 }
-
-
-
-
 
 /* GAME */
 
-
 .game-box{
-
 background:#fff8d8;
 padding:25px;
-border-radius:15px;
+border-radius:18px;
 margin-top:30px;
-
+box-shadow:0 3px 10px rgba(0,0,0,.10);
 }
 
-
-
 .option-btn{
-
+display:block;
+width:100%;
 background:white;
 border:2px solid #8ecae6;
 padding:12px 20px;
 border-radius:12px;
 cursor:pointer;
-margin:8px;
+margin:10px 0;
 font-weight:bold;
-
+font-size:16px;
+transition:.3s;
+text-align:left;
 }
-
-
 
 .option-btn:hover{
-
 background:#e6f2ff;
-
 }
-
-
-
 
 .feedback{
-
 font-weight:bold;
-font-size:18px;
-margin-top:15px;
-
+font-size:17px;
+margin-top:12px;
+padding:10px;
+border-radius:8px;
+display:none;
 }
 
+.correct-fb{
+display:block;
+color:#155724;
+background-color:#d4edda;
+border-left:5px solid #28a745;
+}
 
+.incorrect-fb{
+display:block;
+color:#721c24;
+background-color:#f8d7da;
+border-left:5px solid #dc3545;
+}
 
+.hint-box{
+background:#FFF3CD;
+color:#856404;
+padding:6px 10px;
+border-radius:6px;
+margin-top:6px;
+font-size:14px;
+font-weight:normal;
+display:inline-block;
+border-left:4px solid #FFC107;
+}
 
 /* RESET */
 
-
 .reset-btn{
-
 display:block;
 margin:20px auto;
 background:#3498db;
@@ -237,182 +189,161 @@ padding:12px 25px;
 border-radius:10px;
 cursor:pointer;
 font-weight:bold;
-
 }
-
-
 
 .reset-btn:hover{
-
 background:#2878b5;
-
 }
-
-
-
-
-/* WARM UP */
-
-
-.warmup{
-
-background:#fff9e6;
-padding:25px;
-border-radius:15px;
-
-}
-
-
-
-.warmup li{
-
-margin:10px 0;
-
-}
-
-
-
-
 
 /* READING */
 
-
 .controls{
-
 text-align:center;
 margin:20px;
-
 }
 
-
-
 .controls button{
-
 padding:12px 20px;
 border:none;
 border-radius:10px;
 cursor:pointer;
 margin:5px;
 font-weight:bold;
-
 }
-
-
 
 .play{
-
 background:#4CAF50;
 color:white;
-
 }
-
-
 
 .stop{
-
 background:#e74c3c;
 color:white;
-
 }
-
-
 
 .speed{
-
 background:#3498db;
 color:white;
-
 }
 
-
-
 .reading-box{
-
 background:#fafafa;
 padding:25px;
 border-left:8px solid #4a90e2;
 border-radius:15px;
 line-height:1.8;
-
+font-size:18px;
 }
-
-
-
-
 
 /* ACTIVITIES */
 
-
 .activity{
-
 background:#ffffff;
 padding:25px;
 margin-top:35px;
 border-radius:20px;
 box-shadow:0 3px 10px rgba(0,0,0,.1);
-
 }
 
-
-
 .question{
-
 background:#eef5ff;
 padding:20px;
 border-radius:15px;
 margin-bottom:20px;
-
 }
-
-
-
-
 
 /* DRAG */
 
-
 .drag-area{
-
 display:flex;
 justify-content:center;
 gap:20px;
 flex-wrap:wrap;
-
+margin-top:15px;
 }
-
-
 
 .drag-item{
-
 background:white;
 border:2px solid #8ecae6;
-padding:15px 25px;
+padding:12px 25px;
 border-radius:12px;
 cursor:grab;
-
+font-weight:bold;
+user-select:none;
+transition:0.2s;
 }
 
-
+.drag-item:active{
+cursor:grabbing;
+transform:scale(1.05);
+}
 
 .drop-zone{
-
-min-height:60px;
+min-height:70px;
 border:3px dashed #4a90e2;
 border-radius:12px;
 padding:15px;
 text-align:center;
 margin-top:15px;
-
+font-weight:bold;
+color:#1f4e79;
+background:#fdfdfd;
+display:flex;
+align-items:center;
+justify-content:center;
+flex-direction:column;
 }
 
+/* RÚBRICA DE ESTRELLAS */
 
+.result-box{
+margin-top:30px;
+padding:20px;
+border-radius:15px;
+text-align:center;
+font-size:18px;
+font-weight:bold;
+display:none;
+}
 
+.excellent-result{
+background:#FFFDE7;
+border:3px solid #F1C40F;
+color:#7D6608;
+}
+
+.good-result{
+background:#FFF8D6;
+border:3px solid #F1C40F;
+color:#9A7D0A;
+}
+
+.practice-result{
+background:#FFE8E8;
+border:3px solid #E74C3C;
+color:#922B21;
+}
+
+.stars{
+font-size:35px;
+margin:10px;
+}
+
+.retry-button{
+background:#3498db;
+color:white;
+padding:10px 20px;
+font-size:16px;
+border:none;
+border-radius:10px;
+margin-top:10px;
+cursor:pointer;
+font-weight:bold;
+}
 
 /* HOME */
 
-
 .home-btn{
-
 display:block;
 width:230px;
 margin:50px auto;
@@ -423,19 +354,18 @@ text-align:center;
 text-decoration:none;
 border-radius:10px;
 font-weight:bold;
-
+font-size:18px;
 }
 
-
+.home-btn:hover{
+background:#1d2c3b;
+}
 
 </style>
 
-
 </head>
 
-
 <body>
-
 
 <div class="container">
 
@@ -445,352 +375,118 @@ TITLE SECTION
 
 <h1>🏛️ The Legend of Cantuña 🏛️</h1>
 
-
-<img 
-src="../images/cantuna.jpg" 
-alt="The Legend of Cantuña"
-class="main-image">
-
-
+<img src="../images/cantuna.jpg" alt="The Legend of Cantuña" class="main-image">
 
 <!-- =========================
 BEFORE READING: KEY WORDS
 ========================= -->
 
-
 <h2>Before Reading: Key Words</h2>
-
 
 <div class="vocabulary-grid">
 
-
-
 <div class="vocab-card">
-
 <img src="../images/quito.jpg" alt="quito">
-
 <h4>Quito</h4>
-
 <p>A city in Ecuador.</p>
-
 <button class="audio-btn" onclick="speak('Quito. A city in Ecuador.')">
 🔊 Listen
 </button>
-
 </div>
 
-
-
-
 <div class="vocab-card">
-
 <img src="../images/builder.jpg" alt="builder">
-
 <h4>Builder</h4>
-
 <p>A person who builds buildings and houses.</p>
-
 <button class="audio-btn" onclick="speak('Builder. A person who builds buildings and houses.')">
 🔊 Listen
 </button>
-
 </div>
 
-
-
-
 <div class="vocab-card">
-
 <img src="../images/church.jpg" alt="church">
-
 <h4>Church</h4>
-
 <p>A building where people go to sing and pray to God.</p>
-
 <button class="audio-btn" onclick="speak('Church. A building where people go to sing and pray to God.')">
 🔊 Listen
 </button>
-
 </div>
 
-
-
-
 <div class="vocab-card">
-
 <img src="../images/stone.jpg" alt="stone">
-
 <h4>Stone</h4>
-
 <p>A hard material.</p>
-
 <button class="audio-btn" onclick="speak('Stone. A hard material.')">
 🔊 Listen
 </button>
-
 </div>
 
-
-
-
 <div class="vocab-card">
-
 <img src="../images/clever.jpg" alt="clever">
-
 <h4>Clever</h4>
-
 <p>Smart.</p>
-
 <button class="audio-btn" onclick="speak('Clever. Smart.')">
 🔊 Listen
 </button>
-
 </div>
 
-
 </div>
-
-
-
-
 
 <!-- =========================
 VOCABULARY GAME
 ========================= -->
 
-
-<div class="game-box">
-
+<div class="game-box" id="vocabGame">
 
 <h3>🎮 Vocabulary Game</h3>
+<p>Choose the correct meaning for each word.</p>
 
-
-<p>
-Choose the correct meaning for each word.
-</p>
-
-
-
+<button class="reset-btn" onclick="resetVocabulary()">🔄 Try Vocabulary Again</button>
 
 <!-- QUESTION 1 -->
-
-
-<div class="question" data-question="1">
-
-
+<div class="question" id="vgq1">
 <h4>1. Quito</h4>
-
-
-<button class="option-btn" onclick="checkVocabulary(this,1,false)">
-A hard material
-</button>
-
-
-<button class="option-btn" onclick="checkVocabulary(this,1,true)">
-A city in Ecuador
-</button>
-
-
-<button class="option-btn" onclick="checkVocabulary(this,1,false)">
-A person who builds houses
-</button>
-
-
-<p class="feedback"></p>
-
-
+<button class="option-btn" onclick="checkVocabulary(this, 'vgq1', false, '💡 Hint: Quito is a capital city!')">A hard material</button>
+<button class="option-btn" onclick="checkVocabulary(this, 'vgq1', true, '')">A city in Ecuador</button>
+<button class="option-btn" onclick="checkVocabulary(this, 'vgq1', false, '💡 Hint: A person who builds is a builder, not Quito!')">A person who builds houses</button>
+<div class="feedback"></div>
 </div>
-
-
-
-
 
 <!-- QUESTION 2 -->
-
-
-<div class="question" data-question="2">
-
-
+<div class="question" id="vgq2">
 <h4>2. Builder</h4>
-
-
-<button class="option-btn" onclick="checkVocabulary(this,2,false)">
-A building where people pray
-</button>
-
-
-<button class="option-btn" onclick="checkVocabulary(this,2,true)">
-A person who builds buildings and houses
-</button>
-
-
-<button class="option-btn" onclick="checkVocabulary(this,2,false)">
-Smart
-</button>
-
-
-<p class="feedback"></p>
-
-
+<button class="option-btn" onclick="checkVocabulary(this, 'vgq2', false, '💡 Hint: A church is a place, a builder is a person!')">A building where people pray</button>
+<button class="option-btn" onclick="checkVocabulary(this, 'vgq2', true, '')">A person who builds buildings and houses</button>
+<button class="option-btn" onclick="checkVocabulary(this, 'vgq2', false, '💡 Hint: Smart means clever!')">Smart</button>
+<div class="feedback"></div>
 </div>
-
-
-
-
 
 <!-- QUESTION 3 -->
-
-
-<div class="question" data-question="3">
-
-
+<div class="question" id="vgq3">
 <h4>3. Church</h4>
-
-
-<button class="option-btn" onclick="checkVocabulary(this,3,true)">
-A building where people pray to God
-</button>
-
-
-<button class="option-btn" onclick="checkVocabulary(this,3,false)">
-A city in Ecuador
-</button>
-
-
-<button class="option-btn" onclick="checkVocabulary(this,3,false)">
-A hard material
-</button>
-
-
-<p class="feedback"></p>
-
-
+<button class="option-btn" onclick="checkVocabulary(this, 'vgq3', true, '')">A building where people pray to God</button>
+<button class="option-btn" onclick="checkVocabulary(this, 'vgq3', false, '💡 Hint: Quito is the city in Ecuador!')">A city in Ecuador</button>
+<button class="option-btn" onclick="checkVocabulary(this, 'vgq3', false, '💡 Hint: Stone is a hard material!')">A hard material</button>
+<div class="feedback"></div>
 </div>
-
-
-
-
 
 <!-- QUESTION 4 -->
-
-
-<div class="question" data-question="4">
-
-
+<div class="question" id="vgq4">
 <h4>4. Stone</h4>
-
-
-<button class="option-btn" onclick="checkVocabulary(this,4,false)">
-Smart
-</button>
-
-
-<button class="option-btn" onclick="checkVocabulary(this,4,true)">
-A hard material
-</button>
-
-
-<button class="option-btn" onclick="checkVocabulary(this,4,false)">
-A builder
-</button>
-
-
-<p class="feedback"></p>
-
-
+<button class="option-btn" onclick="checkVocabulary(this, 'vgq4', false, '💡 Hint: Clever means smart!')">Smart</button>
+<button class="option-btn" onclick="checkVocabulary(this, 'vgq4', true, '')">A hard material</button>
+<button class="option-btn" onclick="checkVocabulary(this, 'vgq4', false, '💡 Hint: A builder is a person!')">A builder</button>
+<div class="feedback"></div>
 </div>
-
-
-
-
 
 <!-- QUESTION 5 -->
-
-
-<div class="question" data-question="5">
-
-
+<div class="question" id="vgq5">
 <h4>5. Clever</h4>
-
-
-<button class="option-btn" onclick="checkVocabulary(this,5,false)">
-A type of building
-</button>
-
-
-<button class="option-btn" onclick="checkVocabulary(this,5,true)">
-Smart
-</button>
-
-
-<button class="option-btn" onclick="checkVocabulary(this,5,false)">
-A stone
-</button>
-
-
-<p class="feedback"></p>
-
-
+<button class="option-btn" onclick="checkVocabulary(this, 'vgq5', false, '💡 Hint: Think about a person with high intelligence!')">A type of building</button>
+<button class="option-btn" onclick="checkVocabulary(this, 'vgq5', true, '')">Smart</button>
+<button class="option-btn" onclick="checkVocabulary(this, 'vgq5', false, '💡 Hint: A stone is an object!')">A stone</button>
+<div class="feedback"></div>
 </div>
-
-
-
-
-
-<button class="reset-btn" onclick="resetVocabulary()">
-🔄 Try Vocabulary Again
-</button>
-
-
-</div>
-
-
-
-
-
-<!-- =========================
-WARM UP
-========================= -->
-
-
-<h2>Warm-up</h2>
-
-
-<div class="warmup">
-
-
-<h3>Let's Think Before Reading! 🤔</h3>
-
-
-<ul>
-
-<li>
-Do you like smart heroes?
-</li>
-
-
-<li>
-Do you know any legend or story?
-</li>
-
-
-<li>
-Look at this young builder. What do you think he does?
-</li>
-
-
-<li>
-Can you build a house with stone?
-</li>
-
-
-<li>
-Let's discover a famous story from Quito!!!
-</li>
-
-
-</ul>
-
 
 </div>
 
@@ -798,328 +494,107 @@ Let's discover a famous story from Quito!!!
 READING TIME
 ========================= -->
 
-
 <h2>📖 Reading Time</h2>
 
-
-
 <div class="controls">
-
-
-<button class="play" onclick="playStory()">
-▶ Play
-</button>
-
-
-<button class="stop" onclick="stopStory()">
-⏹ Stop
-</button>
-
-
-<button class="speed" onclick="changeSpeed()">
-⚡ Speed
-</button>
-
-
+<button class="play" onclick="playStory()">▶ Play</button>
+<button class="stop" onclick="stopStory()">⏹ Stop</button>
+<button class="speed" onclick="changeSpeed(0.75)">0.75x</button>
+<button class="speed" onclick="changeSpeed(1)">1x</button>
+<button class="speed" onclick="changeSpeed(1.25)">1.25x</button>
+<button class="speed" onclick="changeSpeed(1.5)">1.5x</button>
 </div>
-
-
-
-
 
 <div class="reading-box" id="storyText">
-
-
-<p>
-Many years ago, Cantuña lived in Quito, Ecuador.
-</p>
-
-
-<p>
-He was a young and talented builder.
-</p>
-
-
-<p>
-He wanted to build a spectacular and giant church.
-</p>
-
-
-<p>
-He worked hard every day with many big, heavy stones.
-</p>
-
-
-<p>
-One day, Cantuña had a very big problem.
-</p>
-
-
-<p>
-The sun was going down, and the church was not finished!
-</p>
-
-
-<p>
-He was very worried and sad. He needed help fast!
-</p>
-
-
-<p>
-A mysterious man appeared and offered help.
-</p>
-
-
-<p>
-The mysterious man wanted to take Cantuña's soul if he finished the church.
-</p>
-
-
-<p>
-But Cantuña was super clever!
-</p>
-
-
-<p>
-He secretly hid one single stone under his coat.
-</p>
-
-
-<p>
-Since one stone was missing, the work was not completed!
-</p>
-
-
-<p>
-Cantuña saved himself and won!
-</p>
-
-
-<h3 style="text-align:center; margin-top:25px;">
-🌟 The End 🌟
-</h3>
-
-
+<p>Many years ago, Cantuña lived in Quito, Ecuador.</p>
+<br>
+<p>He was a young and talented builder.</p>
+<br>
+<p>He wanted to build a spectacular and giant church.</p>
+<br>
+<p>He worked hard every day with many big, heavy stones.</p>
+<br>
+<p>One day, Cantuña had a very big problem.</p>
+<br>
+<p>The sun was going down, and the church was not finished!</p>
+<br>
+<p>He was very worried and sad. He needed help fast!</p>
+<br>
+<p>A mysterious man appeared and offered help.</p>
+<br>
+<p>The mysterious man wanted to take Cantuña's soul if he finished the church.</p>
+<br>
+<p>But Cantuña was super clever!</p>
+<br>
+<p>He secretly hid one single stone under his coat.</p>
+<br>
+<p>Since one stone was missing, the work was not completed!</p>
+<br>
+<p>Cantuña saved himself and won!</p>
+<br>
+<h3 style="text-align:center; margin-top:25px;">🌟 The End 🌟</h3>
 </div>
-
 
 <!-- =========================
 LITERAL COMPREHENSION
 ========================= -->
 
-
 <h2>Literal Comprehension</h2>
 
+<div class="activity" id="activity1">
 
+<h3>Activity 1: Drag and Drop Activity 🎯</h3>
+<p>Drag the correct answer to the box.</p>
 
-
-<div class="activity">
-
-
-
-<h3>
-Activity 1: Drag and Drop Activity 🎯
-</h3>
-
-
-<p>
-Drag the correct answer to the box.
-</p>
-
-
-
+<button class="reset-btn" onclick="resetLiteral()">🔄 Try Literal Activity Again</button>
 
 <!-- QUESTION 1 -->
-
-
-<div class="question">
-
-
-<h4>
-1. Where did Cantuña live?
-</h4>
-
-
+<div class="question" id="lit1">
+<h4>1. Where did Cantuña live?</h4>
 
 <div class="drag-area">
-
-
-<div class="drag-item"
-draggable="true"
-id="quito"
-ondragstart="drag(event)">
-Quito
+<div class="drag-item" draggable="true" id="quito" ondragstart="drag(event)">Quito</div>
+<div class="drag-item" draggable="true" id="loja" ondragstart="drag(event)">Loja</div>
+<div class="drag-item" draggable="true" id="guayaquil" ondragstart="drag(event)">Guayaquil</div>
 </div>
 
-
-<div class="drag-item"
-draggable="true"
-id="loja"
-ondragstart="drag(event)">
-Loja
-</div>
-
-
-<div class="drag-item"
-draggable="true"
-id="guayaquil"
-ondragstart="drag(event)">
-Guayaquil
-</div>
-
-
-</div>
-
-
-
-<div class="drop-zone"
-ondrop="drop(event,'quito')"
-ondragover="allowDrop(event)">
-
+<div class="drop-zone" ondrop="drop(event, 'quito', 'lit1', '💡 Hint: Look at the first sentence of the story!')" ondragover="allowDrop(event)">
 Drop answer here
-
 </div>
-
-
-
-<p class="feedback" id="feedback1"></p>
-
-
+<div class="feedback"></div>
 </div>
-
-
 
 <!-- QUESTION 2 -->
-
-
-<div class="question">
-
-
-<h4>
-2. What did Cantuña build?
-</h4>
-
-
+<div class="question" id="lit2">
+<h4>2. What did Cantuña build?</h4>
 
 <div class="drag-area">
-
-
-<div class="drag-item"
-draggable="true"
-id="house"
-ondragstart="drag(event)">
-A house
+<div class="drag-item" draggable="true" id="house" ondragstart="drag(event)">A house</div>
+<div class="drag-item" draggable="true" id="church" ondragstart="drag(event)">A church</div>
+<div class="drag-item" draggable="true" id="school" ondragstart="drag(event)">A school</div>
 </div>
 
-
-<div class="drag-item"
-draggable="true"
-id="church"
-ondragstart="drag(event)">
-A church
-</div>
-
-
-<div class="drag-item"
-draggable="true"
-id="school"
-ondragstart="drag(event)">
-A school
-</div>
-
-
-</div>
-
-
-
-<div class="drop-zone"
-ondrop="drop(event,'church')"
-ondragover="allowDrop(event)">
-
+<div class="drop-zone" ondrop="drop(event, 'church', 'lit2', '💡 Hint: It is a giant building where people pray!')" ondragover="allowDrop(event)">
 Drop answer here
-
 </div>
-
-
-
-<p class="feedback" id="feedback2"></p>
-
-
+<div class="feedback"></div>
 </div>
-
-
-
-
-
-
 
 <!-- QUESTION 3 -->
-
-
-<div class="question">
-
-
-<h4>
-3. What did Cantuña use to build?
-</h4>
-
-
+<div class="question" id="lit3">
+<h4>3. What did Cantuña use to build?</h4>
 
 <div class="drag-area">
-
-
-<div class="drag-item"
-draggable="true"
-id="stones"
-ondragstart="drag(event)">
-Stones
+<div class="drag-item" draggable="true" id="stones" ondragstart="drag(event)">Stones</div>
+<div class="drag-item" draggable="true" id="books" ondragstart="drag(event)">Books</div>
+<div class="drag-item" draggable="true" id="toys" ondragstart="drag(event)">Toys</div>
 </div>
 
-
-<div class="drag-item"
-draggable="true"
-id="books"
-ondragstart="drag(event)">
-Books
-</div>
-
-
-<div class="drag-item"
-draggable="true"
-id="toys"
-ondragstart="drag(event)">
-Toys
-</div>
-
-
-</div>
-
-
-
-<div class="drop-zone"
-ondrop="drop(event,'stones')"
-ondragover="allowDrop(event)">
-
+<div class="drop-zone" ondrop="drop(event, 'stones', 'lit3', '💡 Hint: He worked with big, heavy materials!')" ondragover="allowDrop(event)">
 Drop answer here
-
 </div>
-
-
-
-<p class="feedback" id="feedback3"></p>
-
-
+<div class="feedback"></div>
 </div>
-
-
-
-
-
-<button class="reset-btn" onclick="resetLiteral()">
-🔄 Try Literal Activity Again
-</button>
-
-
 
 </div>
 
@@ -1127,508 +602,327 @@ Drop answer here
 INFERENTIAL COMPREHENSION
 ========================= -->
 
-
 <h2>Inferential Comprehension (Think About The Text)</h2>
 
+<div class="activity" id="activity2">
 
+<h3>Activity 2: Choose the Correct Answer 💡</h3>
 
-<div class="activity">
-
-
-
-<h3>
-Activity 2: Choose the Correct Answer 💡
-</h3>
-
-
-
-
+<button class="reset-btn" onclick="resetInferential()">🔄 Try Questions Again</button>
 
 <!-- QUESTION 1 -->
+<div class="question" id="inf1">
+<h4>1. What did Cantuña need help with?</h4>
 
-
-<div class="question">
-
-
-<h4>
-1. What did Cantuña need help with?
-</h4>
-
-
-
-<button class="option-btn"
-onclick="checkInferential(this,true)">
-The church was not finished
-</button>
-
-
-<button class="option-btn"
-onclick="checkInferential(this,false)">
-He wanted to travel
-</button>
-
-
-<button class="option-btn"
-onclick="checkInferential(this,false)">
-He wanted a new house
-</button>
-
-
-
-<p class="feedback"></p>
-
-
-<p>
-💡 Hint: Think about his problem before sunset.
-</p>
-
-
+<button class="option-btn" onclick="checkInferential(this, 'inf1', true, '')">The church was not finished</button>
+<button class="option-btn" onclick="checkInferential(this, 'inf1', false, '💡 Hint: Think about his problem before sunset!')">He wanted to travel</button>
+<button class="option-btn" onclick="checkInferential(this, 'inf1', false, '💡 Hint: He was building a church, not a house!')">He wanted a new house</button>
+<div class="feedback"></div>
 </div>
-
-
-
-
-
-
 
 <!-- QUESTION 2 -->
+<div class="question" id="inf2">
+<h4>2. What can we say about Cantuña?</h4>
 
-
-<div class="question">
-
-
-<h4>
-2. What can we say about Cantuña?
-</h4>
-
-
-
-<button class="option-btn"
-onclick="checkInferential(this,false)">
-He was lazy
-</button>
-
-
-<button class="option-btn"
-onclick="checkInferential(this,true)">
-He was clever
-</button>
-
-
-<button class="option-btn"
-onclick="checkInferential(this,false)">
-He was careless
-</button>
-
-
-
-<p class="feedback"></p>
-
-
-<p>
-💡 Hint: He found a smart solution.
-</p>
-
-
+<button class="option-btn" onclick="checkInferential(this, 'inf2', false, '💡 Hint: He worked hard every day, so he was not lazy!')">He was lazy</button>
+<button class="option-btn" onclick="checkInferential(this, 'inf2', true, '')">He was clever</button>
+<button class="option-btn" onclick="checkInferential(this, 'inf2', false, '💡 Hint: He hid a stone under his coat, that was smart!')">He was careless</button>
+<div class="feedback"></div>
 </div>
-
-
-
-
-
-
-
 
 <!-- QUESTION 3 -->
+<div class="question" id="inf3">
+<h4>3. What is the story about?</h4>
 
-
-<div class="question">
-
-
-<h4>
-3. What is the story about?
-</h4>
-
-
-
-<button class="option-btn"
-onclick="checkInferential(this,false)">
-A trip to Ecuador
-</button>
-
-
-<button class="option-btn"
-onclick="checkInferential(this,true)">
-A clever builder from Quito
-</button>
-
-
-<button class="option-btn"
-onclick="checkInferential(this,false)">
-A school activity
-</button>
-
-
-
-<p class="feedback"></p>
-
-
-<p>
-💡 Hint: Think about the main character.
-</p>
-
+<button class="option-btn" onclick="checkInferential(this, 'inf3', false, '💡 Hint: It is a legend from Quito, not a trip!')">A trip to Ecuador</button>
+<button class="option-btn" onclick="checkInferential(this, 'inf3', true, '')">A clever builder from Quito</button>
+<button class="option-btn" onclick="checkInferential(this, 'inf3', false, '💡 Hint: It is a legend about Cantuña!')">A school activity</button>
+<div class="feedback"></div>
+</div>
 
 </div>
 
+<!-- =====================================================
+FINAL SCORE / RÚBRICA DE ESTRELLAS
+===================================================== -->
 
-
-
-
-<button class="reset-btn" onclick="resetInferential()">
-🔄 Try Questions Again
+<section class="activity" style="margin-top:35px;">
+<button onclick="calculateFinalScore()" style="width:100%; padding:15px; font-size:18px; background:#1f4e79; color:white; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">
+🏆 Check Final Mission Score!
 </button>
 
-
-
+<div id="finalScoreResult" class="result-box">
+<div>🎉 Mission Completed!</div>
+<div id="finalScoreText"></div>
+<div id="finalStars" class="stars"></div>
+<div id="finalResultMessage"></div>
+<button class="retry-button" onclick="location.reload()">🔄 Play Again</button>
 </div>
-
-
-
-
-
-
+</section>
 
 <!-- =========================
 BACK HOME
 ========================= -->
 
-
-<a href="../index.html" class="home-btn">
-🏠 Back to Home
-</a>
-
-
+<a href="../index.html" class="home-btn">🏠 Back to Home</a>
 
 </div>
 
-
-
-
-
 <script>
 
+/*=========================================
+TRACKING SCORES FOR RUBRIC
+=========================================*/
 
-// =========================
-// VOCABULARY AUDIO
-// =========================
+let userFirstAttempts = {
+    vgq1: null, vgq2: null, vgq3: null, vgq4: null, vgq5: null,
+    lit1: null, lit2: null, lit3: null,
+    inf1: null, inf2: null, inf3: null
+};
 
+/*=========================================
+AUDIO FUNCTIONS
+=========================================*/
 
 function speak(text){
-
-let speech = new SpeechSynthesisUtterance(text);
-
-speech.lang = "en-US";
-
-speech.rate = 0.9;
-
-window.speechSynthesis.cancel();
-
-window.speechSynthesis.speak(speech);
-
+    window.speechSynthesis.cancel();
+    let speech = new SpeechSynthesisUtterance(text);
+    speech.lang = "en-US";
+    speech.rate = 0.9;
+    window.speechSynthesis.speak(speech);
 }
 
-
-
-
-
-// =========================
-// VOCABULARY GAME
-// =========================
-
-
-function checkVocabulary(button, question, correct){
-
-
-let box = button.parentElement;
-
-let feedback = box.querySelector(".feedback");
-
-
-if(correct){
-
-feedback.innerHTML = "✅ Correct! Great job!";
-
-feedback.style.color = "green";
-
-
-}else{
-
-feedback.innerHTML = "❌ Incorrect. Try again!";
-
-feedback.style.color = "red";
-
+function playFeedbackAudio(text){
+    window.speechSynthesis.cancel();
+    let cleanText = text.replace(/<br>/gi, " ").replace(/<[^>]*>/g, "").replace(/[✅❌💡🎉⭐🏆]/g, "");
+    let speech = new SpeechSynthesisUtterance(cleanText);
+    speech.lang = "en-US";
+    speech.rate = 0.95;
+    window.speechSynthesis.speak(speech);
 }
 
-
-}
-
-
-
-
-
-function resetVocabulary(){
-
-
-let feedbacks=document.querySelectorAll(".feedback");
-
-
-feedbacks.forEach(item=>{
-
-item.innerHTML="";
-
-});
-
-
-}
-
-
-
-
-
-
-
-// =========================
-// READING TIME
-// =========================
-
-
-let speechText;
+/*=========================================
+READING AUDIO CONTROLS
+=========================================*/
 
 let speed = 1;
 
-
 function playStory(){
-
-
-stopStory();
-
-
-let text = document.getElementById("storyText").innerText;
-
-
-speechText = new SpeechSynthesisUtterance(text);
-
-
-speechText.lang="en-US";
-
-speechText.rate=speed;
-
-
-window.speechSynthesis.speak(speechText);
-
-
+    stopStory();
+    let text = document.getElementById("storyText").innerText;
+    let speechText = new SpeechSynthesisUtterance(text);
+    speechText.lang = "en-US";
+    speechText.rate = speed;
+    window.speechSynthesis.speak(speechText);
 }
-
-
-
-
 
 function stopStory(){
-
-
-window.speechSynthesis.cancel();
-
-
+    window.speechSynthesis.cancel();
 }
 
-
-
-
-
-function changeSpeed(){
-
-
-speed +=0.3;
-
-
-if(speed>2){
-
-speed=0.7;
-
+function changeSpeed(val){
+    speed = val;
 }
 
+/*=========================================
+VOCABULARY GAME
+=========================================*/
 
-alert("Reading speed: " + speed);
+function checkVocabulary(button, qId, correct, hintText){
+    const card = document.getElementById(qId);
+    const feedback = card.querySelector(".feedback");
 
+    if(card.dataset.finished === "true") return;
 
+    if(userFirstAttempts[qId] === null){
+        userFirstAttempts[qId] = correct;
+    }
+
+    if(correct){
+        button.style.background = "rgba(76,175,80,.35)";
+        button.style.borderColor = "green";
+        feedback.className = "feedback correct-fb";
+        feedback.innerHTML = "✅ Correct! Great job!";
+        card.dataset.finished = "true";
+        card.querySelectorAll(".option-btn").forEach(opt => opt.disabled = true);
+    } else {
+        button.style.background = "rgba(255,165,0,.35)";
+        button.style.borderColor = "orange";
+        button.disabled = true;
+        feedback.className = "feedback incorrect-fb";
+        feedback.innerHTML = "❌ Try Again!<br><span class='hint-box'>" + hintText + "</span>";
+    }
+
+    playFeedbackAudio(feedback.innerText);
 }
 
-
-
-
-
-
-function resetReading(){
-
-
-stopStory();
-
-alert("Reading restarted!");
-
+function resetVocabulary(){
+    document.querySelectorAll("#vocabGame .question").forEach(card => {
+        card.dataset.finished = "false";
+        let fb = card.querySelector(".feedback");
+        fb.style.display = "none";
+        fb.innerHTML = "";
+        card.querySelectorAll(".option-btn").forEach(btn => {
+            btn.disabled = false;
+            btn.style.background = "white";
+            btn.style.borderColor = "#8ecae6";
+        });
+    });
 }
 
+/*=========================================
+DRAG AND DROP GAME
+=========================================*/
 
-
-
-
-// =========================
-// DRAG AND DROP
-// =========================
-
-
-let draggedItem;
-
-
+let draggedItem = null;
 
 function drag(event){
-
-
-draggedItem = event.target;
-
-
+    draggedItem = event.target;
 }
-
-
-
-
 
 function allowDrop(event){
-
-
-event.preventDefault();
-
-
+    event.preventDefault();
 }
 
+function drop(event, correctAnswer, qId, hintText){
+    event.preventDefault();
+    if(!draggedItem) return;
 
+    const card = document.getElementById(qId);
+    const dropZone = card.querySelector(".drop-zone");
+    const feedback = card.querySelector(".feedback");
 
+    if(card.dataset.finished === "true") return;
 
+    let isCorrect = (draggedItem.id === correctAnswer);
 
-function drop(event, correctAnswer){
+    if(userFirstAttempts[qId] === null){
+        userFirstAttempts[qId] = isCorrect;
+    }
 
+    if(isCorrect){
+        dropZone.innerHTML = "🎯 " + draggedItem.innerText;
+        dropZone.style.borderColor = "green";
+        dropZone.style.background = "#d4edda";
+        feedback.className = "feedback correct-fb";
+        feedback.innerHTML = "✅ Correct! Excellent!";
+        card.dataset.finished = "true";
+        draggedItem.style.display = "none";
+    } else {
+        dropZone.style.borderColor = "orange";
+        dropZone.style.background = "#f8d7da";
+        feedback.className = "feedback incorrect-fb";
+        feedback.innerHTML = "❌ Try Again!<br><span class='hint-box'>" + hintText + "</span>";
+    }
 
-event.preventDefault();
-
-
-let box = event.target;
-
-
-box.innerHTML = draggedItem.innerHTML;
-
-
-
-if(draggedItem.id === correctAnswer){
-
-
-box.innerHTML += "<br>✅ Correct!";
-
-
-box.style.borderColor="green";
-
-
-}else{
-
-
-box.innerHTML += "<br>❌ Incorrect. Try again!";
-
-
-box.style.borderColor="red";
-
-
+    playFeedbackAudio(feedback.innerText);
 }
-
-
-}
-
-
-
-
 
 function resetLiteral(){
+    document.querySelectorAll("#activity1 .question").forEach(card => {
+        card.dataset.finished = "false";
+        let fb = card.querySelector(".feedback");
+        fb.style.display = "none";
+        fb.innerHTML = "";
 
+        let dropZone = card.querySelector(".drop-zone");
+        dropZone.innerHTML = "Drop answer here";
+        dropZone.style.borderColor = "#4a90e2";
+        dropZone.style.background = "#fdfdfd";
 
-location.reload();
-
-
+        card.querySelectorAll(".drag-item").forEach(item => {
+            item.style.display = "block";
+        });
+    });
 }
 
+/*=========================================
+INFERENTIAL QUESTIONS
+=========================================*/
 
+function checkInferential(button, qId, correct, hintText){
+    const card = document.getElementById(qId);
+    const feedback = card.querySelector(".feedback");
 
+    if(card.dataset.finished === "true") return;
 
+    if(userFirstAttempts[qId] === null){
+        userFirstAttempts[qId] = correct;
+    }
 
+    if(correct){
+        button.style.background = "rgba(76,175,80,.35)";
+        button.style.borderColor = "green";
+        feedback.className = "feedback correct-fb";
+        feedback.innerHTML = "✅ Correct! Brilliant thinking!";
+        card.dataset.finished = "true";
+        card.querySelectorAll(".option-btn").forEach(opt => opt.disabled = true);
+    } else {
+        button.style.background = "rgba(255,165,0,.35)";
+        button.style.borderColor = "orange";
+        button.disabled = true;
+        feedback.className = "feedback incorrect-fb";
+        feedback.innerHTML = "❌ Try Again!<br><span class='hint-box'>" + hintText + "</span>";
+    }
 
-
-// =========================
-// INFERENTIAL QUESTIONS
-// =========================
-
-
-function checkInferential(button,correct){
-
-
-let question = button.parentElement;
-
-
-let feedback = question.querySelector(".feedback");
-
-
-
-if(correct){
-
-
-feedback.innerHTML="✅ Correct!";
-
-feedback.style.color="green";
-
-
-}else{
-
-
-feedback.innerHTML="❌ Incorrect. Try again!";
-
-feedback.style.color="red";
-
-
+    playFeedbackAudio(feedback.innerText);
 }
-
-
-
-}
-
-
-
-
 
 function resetInferential(){
-
-
-let feedback=document.querySelectorAll(".feedback");
-
-
-feedback.forEach(item=>{
-
-item.innerHTML="";
-
-});
-
-
+    document.querySelectorAll("#activity2 .question").forEach(card => {
+        card.dataset.finished = "false";
+        let fb = card.querySelector(".feedback");
+        fb.style.display = "none";
+        fb.innerHTML = "";
+        card.querySelectorAll(".option-btn").forEach(btn => {
+            btn.disabled = false;
+            btn.style.background = "white";
+            btn.style.borderColor = "#8ecae6";
+        });
+    });
 }
 
+/*=========================================
+CALCULATE FINAL SCORE & RÚBRICA
+=========================================*/
 
+function calculateFinalScore() {
+    let score = 0;
+    let totalQuestions = Object.keys(userFirstAttempts).length; // 11 preguntas en total
+
+    Object.keys(userFirstAttempts).forEach(k => {
+        if(userFirstAttempts[k] === true) score++;
+    });
+
+    let resBox = document.getElementById("finalScoreResult");
+    let starsEl = document.getElementById("finalStars");
+    let scoreTextEl = document.getElementById("finalScoreText");
+    let msgEl = document.getElementById("finalResultMessage");
+
+    scoreTextEl.innerText = "Correct First Try Answers: " + score + " / " + totalQuestions;
+
+    if(score >= 8) {
+        resBox.className = "result-box excellent-result";
+        starsEl.innerText = "⭐⭐⭐";
+        msgEl.innerText = "Outstanding! You are a Cantuña Legend Master!";
+        playFeedbackAudio("Outstanding! You are a Cantuña Legend Master!");
+    } else if(score >= 5) {
+        resBox.className = "result-box good-result";
+        starsEl.innerText = "⭐⭐";
+        msgEl.innerText = "Good job! You completed most activities correctly!";
+        playFeedbackAudio("Good job! You completed most activities correctly!");
+    } else {
+        resBox.className = "result-box practice-result";
+        starsEl.innerText = "⭐";
+        msgEl.innerText = "Keep practicing! Read the story again and try once more!";
+        playFeedbackAudio("Keep practicing! Read the story again and try once more!");
+    }
+
+    resBox.style.display = "block";
+    resBox.scrollIntoView({ behavior: 'smooth' });
+}
 
 </script>
-
-
 
 </body>
 
