@@ -17,227 +17,132 @@
 }
 
 body{
-
     font-family:Comic Sans MS, Arial, sans-serif;
     background:#eef7ff;
     color:#333;
-
+    padding-bottom:40px;
 }
-
 
 /*==========================
 HEADER
 ==========================*/
 
 header{
-
     background:linear-gradient(135deg,#4facfe,#00c6ff);
     color:white;
     text-align:center;
     padding:25px;
     border-radius:0 0 35px 35px;
     box-shadow:0 5px 15px rgba(0,0,0,.25);
-
 }
 
 header h1{
-
     font-size:42px;
     margin-bottom:20px;
-
 }
 
 .header-image{
-
     width:240px;
     max-width:90%;
     margin:auto;
     display:block;
     border-radius:20px;
     box-shadow:0 5px 15px rgba(0,0,0,.25);
-
 }
 
 .home-btn{
-
     margin-top:25px;
-
     background:white;
     color:#2196f3;
-
     border:none;
-
     padding:12px 25px;
-
     border-radius:30px;
-
     cursor:pointer;
-
     font-size:18px;
-
     font-weight:bold;
-
     transition:.3s;
-
+    text-decoration:none;
+    display:inline-block;
 }
 
 .home-btn:hover{
-
     transform:scale(1.05);
-
 }
-
-
 
 /*==========================
 GENERAL SECTION
 ==========================*/
 
 .section{
-
     width:92%;
     max-width:1200px;
-
     margin:35px auto;
-
     background:white;
-
     border-radius:25px;
-
     padding:30px;
-
     box-shadow:0 5px 15px rgba(0,0,0,.15);
-
 }
 
 .section h2{
-
     color:#1976d2;
     margin-bottom:25px;
     font-size:34px;
-
 }
-
-
 
 /*==========================
 VOCABULARY CARDS
 ==========================*/
 
 .words-container{
-
     display:grid;
-
     grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-
     gap:25px;
-
     margin-top:30px;
-
 }
-
 
 .word-card{
-
     background:white;
-
     border-radius:20px;
-
     padding:18px;
-
     box-shadow:0 4px 12px rgba(0,0,0,.15);
-
     transition:.3s;
-
+    text-align:center;
 }
-
 
 .word-card:hover{
-
     transform:translateY(-5px);
-
 }
 
-
 .word-card img{
-
     width:110px;
     height:110px;
     object-fit:contain;
-
     margin-bottom:15px;
-
 }
-
 
 .word-card h3{
-
     color:#1565c0;
     margin-bottom:10px;
-
 }
 
-
 .word-card p{
-
     font-size:15px;
     min-height:70px;
     margin-bottom:15px;
-
 }
 
-
 .listen-btn{
-
     background:#ffd54f;
-
     border:none;
-
     border-radius:20px;
-
     padding:10px 20px;
-
     cursor:pointer;
-
     font-size:16px;
-
     font-weight:bold;
-
 }
 
 .listen-btn:hover{
-
     background:#ffca28;
-
-}
-
-
-
-/*==========================
-RESPONSIVE
-==========================*/
-
-@media(max-width:768px){
-
-header h1{
-
-font-size:30px;
-
-}
-
-.section h2{
-
-font-size:28px;
-
-}
-
-.word-card img{
-
-width:90px;
-height:90px;
-
-}
-
 }
 
 /*==========================
@@ -245,81 +150,111 @@ VOCABULARY GAME
 ==========================*/
 
 .drag-container{
-display:flex;
-flex-direction:column;
-gap:30px;
+    display:flex;
+    flex-direction:column;
+    gap:30px;
 }
 
 .drag-images{
-display:flex;
-justify-content:center;
-flex-wrap:wrap;
-gap:20px;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:20px;
 }
 
 .drag-item{
-width:110px;
-height:110px;
-object-fit:contain;
-cursor:grab;
-background:white;
-padding:10px;
-border-radius:20px;
-box-shadow:0 4px 10px rgba(0,0,0,.15);
-transition:.3s;
+    width:110px;
+    height:110px;
+    object-fit:contain;
+    cursor:grab;
+    background:white;
+    padding:10px;
+    border-radius:20px;
+    box-shadow:0 4px 10px rgba(0,0,0,.15);
+    transition:.3s;
+    user-select:none;
 }
 
 .drag-item:hover{
-transform:scale(1.08);
+    transform:scale(1.08);
 }
 
 .definition-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-gap:20px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:20px;
 }
 
 .drop-box{
-background:#f8fbff;
-border:3px dashed #64b5f6;
-border-radius:18px;
-padding:20px;
-min-height:90px;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:17px;
-transition:.3s;
+    background:#f8fbff;
+    border:3px dashed #64b5f6;
+    border-radius:18px;
+    padding:20px;
+    min-height:110px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    font-size:17px;
+    transition:.3s;
+    text-align:center;
 }
 
-.correct{
-background:#c8f7c5;
-border:3px solid #2e7d32;
+.reset-btn{
+    display:block;
+    margin:20px auto 0;
+    background:#3498db;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    border-radius:20px;
+    cursor:pointer;
+    font-weight:bold;
+    font-size:16px;
 }
 
-.incorrect{
-background:#f3d5ff;
-border:3px solid #ab47bc;
-}
-
-#vocabulary-result{
-margin-top:25px;
-font-size:24px;
-color:#1565c0;
-font-weight:bold;
+.reset-btn:hover{
+    background:#2878b5;
 }
 
 /*==========================
-WARM UP
+FEEDBACK STYLES
 ==========================*/
 
-.warmup-box{
-background:#fff59d;
-padding:25px;
-border-radius:20px;
-font-size:20px;
-line-height:1.9;
-text-align:left;
+.feedback{
+    font-weight:bold;
+    font-size:16px;
+    margin-top:10px;
+    padding:10px 15px;
+    border-radius:8px;
+    display:none;
+    width:100%;
+}
+
+.correct-fb{
+    display:block !important;
+    color:#155724;
+    background-color:#d4edda;
+    border-left:5px solid #28a745;
+}
+
+.incorrect-fb{
+    display:block !important;
+    color:#721c24;
+    background-color:#f8d7da;
+    border-left:5px solid #dc3545;
+}
+
+.hint-box{
+    background:#FFF3CD;
+    color:#856404;
+    padding:6px 10px;
+    border-radius:6px;
+    margin-top:6px;
+    font-size:14px;
+    font-weight:normal;
+    display:inline-block;
+    border-left:4px solid #FFC107;
 }
 
 /*==========================
@@ -327,41 +262,41 @@ READING
 ==========================*/
 
 .reading-buttons{
-display:flex;
-justify-content:center;
-flex-wrap:wrap;
-gap:15px;
-margin:25px 0;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:15px;
+    margin:25px 0;
 }
 
 .reading-buttons button{
-background:#42a5f5;
-color:white;
-border:none;
-padding:12px 22px;
-border-radius:25px;
-font-size:17px;
-font-weight:bold;
-cursor:pointer;
-transition:.3s;
+    background:#42a5f5;
+    color:white;
+    border:none;
+    padding:12px 22px;
+    border-radius:25px;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
 }
 
 .reading-buttons button:hover{
-transform:scale(1.08);
+    transform:scale(1.08);
 }
 
 .story-box{
-background:#eef7ff;
-padding:30px;
-border-radius:20px;
-font-size:21px;
-line-height:2;
-text-align:left;
-box-shadow:0 4px 10px rgba(0,0,0,.12);
+    background:#eef7ff;
+    padding:30px;
+    border-radius:20px;
+    font-size:21px;
+    line-height:2;
+    text-align:left;
+    box-shadow:0 4px 10px rgba(0,0,0,.12);
 }
 
 .story-box p{
-margin-bottom:15px;
+    margin-bottom:15px;
 }
 
 /*==========================
@@ -369,310 +304,215 @@ TRUE OR FALSE
 ==========================*/
 
 .emoji-container{
-
-display:flex;
-
-justify-content:center;
-
-gap:60px;
-
-margin:30px 0;
-
-flex-wrap:wrap;
-
+    display:flex;
+    justify-content:center;
+    gap:60px;
+    margin:30px 0;
+    flex-wrap:wrap;
 }
 
 .emoji-box{
-
-background:#f5f5f5;
-
-padding:20px;
-
-border-radius:20px;
-
-box-shadow:0 4px 10px rgba(0,0,0,.12);
-
+    background:#f5f5f5;
+    padding:20px;
+    border-radius:20px;
+    box-shadow:0 4px 10px rgba(0,0,0,.12);
+    text-align:center;
 }
 
 .emoji-box h3{
-
-margin-bottom:15px;
-
-color:#1565c0;
-
+    margin-bottom:15px;
+    color:#1565c0;
 }
 
 .drag-answer{
-
-font-size:45px;
-
-cursor:grab;
-
-margin:10px;
-
-display:inline-block;
-
-transition:.3s;
-
+    font-size:45px;
+    cursor:grab;
+    margin:10px;
+    display:inline-block;
+    transition:.3s;
+    user-select:none;
 }
 
 .drag-answer:hover{
-
-transform:scale(1.15);
-
+    transform:scale(1.15);
 }
 
 .tf-table{
-
-width:100%;
-
-border-collapse:collapse;
-
-margin-top:25px;
-
+    width:100%;
+    border-collapse:collapse;
+    margin-top:25px;
 }
 
 .tf-table th{
-
-background:#42a5f5;
-
-color:white;
-
-padding:15px;
-
-font-size:18px;
-
+    background:#42a5f5;
+    color:white;
+    padding:15px;
+    font-size:18px;
 }
 
 .tf-table td{
-
-border:2px solid #ddd;
-
-padding:15px;
-
-font-size:18px;
-
+    border:2px solid #ddd;
+    padding:15px;
+    font-size:18px;
 }
 
 .drop-answer{
-
-height:65px;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-border:3px dashed #64b5f6;
-
-border-radius:15px;
-
-background:#fafafa;
-
-font-weight:bold;
-
-transition:.3s;
-
-}
-
-.correct-drop{
-
-background:rgba(120,220,120,.35);
-
-border:3px solid green;
-
-}
-
-.wrong-drop{
-
-background:rgba(220,180,255,.35);
-
-border:3px solid #ab47bc;
-
-}
-
-#tf-result{
-
-margin-top:25px;
-
-font-size:24px;
-
-font-weight:bold;
-
-color:#1565c0;
-
+    min-height:75px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    border:3px dashed #64b5f6;
+    border-radius:15px;
+    background:#fafafa;
+    font-weight:bold;
+    transition:.3s;
+    padding:10px;
+    text-align:center;
 }
 
 /*==========================
-ACTIVITY 2
+ACTIVITIES 2, 3 & 4
 ==========================*/
-
 
 .main-idea-container{
-
-display:flex;
-
-justify-content:center;
-
-gap:30px;
-
-flex-wrap:wrap;
-
-margin-top:30px;
-
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+    margin-top:30px;
 }
-
-
 
 .main-option{
-
-width:350px;
-
-min-height:180px;
-
-padding:30px;
-
-background:white;
-
-border-radius:25px;
-
-box-shadow:0 5px 15px rgba(0,0,0,.15);
-
-cursor:pointer;
-
-transition:.3s;
-
-display:flex;
-
-flex-direction:column;
-
-justify-content:center;
-
+    width:350px;
+    min-height:180px;
+    padding:30px;
+    background:white;
+    border-radius:25px;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+    cursor:pointer;
+    transition:.3s;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
 }
-
-
 
 .main-option:hover{
-
-transform:scale(1.05);
-
+    transform:scale(1.05);
 }
-
-
-
-.correct-option{
-
-background:rgba(100,180,255,.35)!important;
-
-}
-
-
-
-.wrong-option{
-
-background:rgba(255,80,80,.30)!important;
-
-}
-
-
-
-
-#main-result{
-
-margin-top:25px;
-
-font-size:24px;
-
-font-weight:bold;
-
-}
-
-
-
-
-
-/*==========================
-ACTIVITY 3
-==========================*/
-
 
 .inferential-grid{
-
-display:grid;
-
-grid-template-columns:repeat(3,1fr);
-
-gap:25px;
-
-margin-top:30px;
-
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+    margin-top:30px;
 }
-
-
 
 .infer-option{
-
-background:white;
-
-padding:25px;
-
-border-radius:25px;
-
-box-shadow:0 5px 15px rgba(0,0,0,.15);
-
-cursor:pointer;
-
-transition:.3s;
-
+    background:white;
+    padding:25px;
+    border-radius:25px;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+    cursor:pointer;
+    transition:.3s;
 }
-
-
 
 .infer-option:hover{
-
-transform:scale(1.05);
-
+    transform:scale(1.05);
 }
 
-
-
-.infer-correct{
-
-background:rgba(100,180,255,.35)!important;
-
+/* Sequence activity styles */
+.sequence-container{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+    margin-top:25px;
 }
 
-
-
-.infer-wrong{
-
-background:rgba(255,80,80,.30)!important;
-
+.seq-item{
+    background:#f8fbff;
+    border:2px solid #64b5f6;
+    border-radius:20px;
+    padding:20px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:15px;
+    box-shadow:0 4px 10px rgba(0,0,0,.08);
 }
 
-
-
-#infer-result{
-
-margin-top:25px;
-
-font-size:24px;
-
-font-weight:bold;
-
+.seq-text{
+    font-size:18px;
+    font-weight:500;
+    flex-grow:1;
 }
 
-
-
-@media(max-width:800px){
-
-.inferential-grid{
-
-grid-template-columns:1fr;
-
+.seq-select{
+    padding:10px 15px;
+    font-size:16px;
+    font-weight:bold;
+    border-radius:12px;
+    border:2px solid #42a5f5;
+    background:white;
+    cursor:pointer;
+    color:#1565c0;
 }
 
+/*==========================
+RÚBRICA DE ESTRELLAS
+==========================*/
+
+.result-box{
+    margin-top:30px;
+    padding:20px;
+    border-radius:15px;
+    text-align:center;
+    font-size:18px;
+    font-weight:bold;
+    display:none;
+}
+
+.excellent-result{
+    background:#FFFDE7;
+    border:3px solid #F1C40F;
+    color:#7D6608;
+}
+
+.good-result{
+    background:#FFF8D6;
+    border:3px solid #F1C40F;
+    color:#9A7D0A;
+}
+
+.practice-result{
+    background:#FFE8E8;
+    border:3px solid #E74C3C;
+    color:#922B21;
+}
+
+.stars{
+    font-size:35px;
+    margin:10px;
+}
+
+.retry-button{
+    background:#3498db;
+    color:white;
+    padding:10px 20px;
+    font-size:16px;
+    border:none;
+    border-radius:10px;
+    margin-top:10px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+@media(max-width:768px){
+    header h1{ font-size:30px; }
+    .section h2{ font-size:28px; }
+    .word-card img{ width:90px; height:90px; }
+    .inferential-grid{ grid-template-columns:1fr; }
+    .seq-item{ flex-direction:column; text-align:center; }
 }
 
 </style>
@@ -681,29 +521,15 @@ grid-template-columns:1fr;
 
 <body>
 
-
-
 <header>
 
 <h1>📱 Leo and his Smartphone</h1>
 
-<img
-src="../images/leo.jpg"
-alt="Leo"
-class="header-image">
+<img src="../images/leo.jpg" alt="Leo" class="header-image">
 
-
-<button
-class="home-btn"
-onclick="goHome()">
-
-🏠 Back Home
-
-</button>
+<a href="../index.html" class="home-btn">🏠 Back Home</a>
 
 </header>
-
-
 
 <!-- ===================================================== -->
 <!-- BEFORE READING -->
@@ -713,345 +539,121 @@ onclick="goHome()">
 
 <h2>Before Reading: Key Words</h2>
 
-<p>
-
-Learn the new words before reading the story.
-
-</p>
+<p>Learn the new words before reading the story.</p>
 
 <div class="words-container">
 
-
-
 <!-- SMARTPHONE -->
-
 <div class="word-card">
-
-<img
-src="../images/smartphone.jpg"
-alt="Smartphone">
-
+<img src="../images/smartphone.jpg" alt="Smartphone">
 <h3>Smartphone</h3>
-
-<p>
-
-A smart mobile phone.
-
-</p>
-
-<button
-class="listen-btn"
-onclick="speak('Smartphone. A smart mobile phone.')">
-
-🔊 Listen
-
-</button>
-
+<p>A smart mobile phone.</p>
+<button class="listen-btn" onclick="speak('Smartphone. A smart mobile phone.')">🔊 Listen</button>
 </div>
-
-
 
 <!-- PLAY -->
-
 <div class="word-card">
-
-<img
-src="../images/play.jpg"
-alt="Play">
-
+<img src="../images/play.jpg" alt="Play">
 <h3>Play</h3>
-
-<p>
-
-Have fun.
-
-</p>
-
-<button
-class="listen-btn"
-onclick="speak('Play. Have fun.')">
-
-🔊 Listen
-
-</button>
-
+<p>Have fun.</p>
+<button class="listen-btn" onclick="speak('Play. Have fun.')">🔊 Listen</button>
 </div>
 
-
-
 <!-- WATCH -->
-
 <div class="word-card">
-
-<img
-src="../images/watch.jpg"
-alt="Watch">
-
+<img src="../images/watch.jpg" alt="Watch">
 <h3>Watch</h3>
-
-<p>
-
-To look at something carefully, like TV or a movie.
-
-</p>
-
-<button
-class="listen-btn"
-onclick="speak('Watch. To look at something carefully, like television or a movie.')">
-
-🔊 Listen
-
-</button>
-
+<p>To look at something carefully, like TV or a movie.</p>
+<button class="listen-btn" onclick="speak('Watch. To look at something carefully, like television or a movie.')">🔊 Listen</button>
 </div>
 
 <!-- CALL -->
-
 <div class="word-card">
-
-<img
-src="../images/call.jpg"
-alt="Call">
-
+<img src="../images/call.jpg" alt="Call">
 <h3>Call</h3>
-
-<p>
-
-To talk to someone on the phone.
-
-</p>
-
-<button
-class="listen-btn"
-onclick="speak('Call. To talk to someone on the phone.')">
-
-🔊 Listen
-
-</button>
-
+<p>To talk to someone on the phone.</p>
+<button class="listen-btn" onclick="speak('Call. To talk to someone on the phone.')">🔊 Listen</button>
 </div>
-
-
 
 <!-- HAPPY -->
-
 <div class="word-card">
-
-<img
-src="../images/happy.jpg"
-alt="Happy">
-
+<img src="../images/happy.jpg" alt="Happy">
 <h3>Happy</h3>
-
-<p>
-
-Feeling very good and smiling.
-
-</p>
-
-<button
-class="listen-btn"
-onclick="speak('Happy. Feeling very good and smiling.')">
-
-🔊 Listen
-
-</button>
-
+<p>Feeling very good and smiling.</p>
+<button class="listen-btn" onclick="speak('Happy. Feeling very good and smiling.')">🔊 Listen</button>
 </div>
-
-
 
 <!-- TIRED -->
-
 <div class="word-card">
-
-<img
-src="../images/tired.jpg"
-alt="Tired">
-
+<img src="../images/tired.jpg" alt="Tired">
 <h3>Tired</h3>
-
-<p>
-
-When you need to rest or sleep because you have little energy.
-
-</p>
-
-<button
-class="listen-btn"
-onclick="speak('Tired. When you need to rest or sleep because you have little energy.')">
-
-🔊 Listen
-
-</button>
-
+<p>When you need to rest or sleep because you have little energy.</p>
+<button class="listen-btn" onclick="speak('Tired. When you need to rest or sleep because you have little energy.')">🔊 Listen</button>
 </div>
 
 </div>
 
 </div>
-
-
 
 <!-- ===================================================== -->
 <!-- VOCABULARY GAME -->
 <!-- ===================================================== -->
 
-<div class="section">
+<div class="section" id="vocabSection">
 
 <h2>Vocabulary Game</h2>
+<p>Drag each picture to the correct definition.</p>
 
-<p>
+<button class="reset-btn" onclick="resetVocabulary()">🔄 Try Vocabulary Again</button>
 
-Drag each picture to the correct definition.
-
-</p>
-
-<div class="drag-container">
+<div class="drag-container" style="margin-top:20px;">
 
 <div class="drag-images">
-
-<img src="../images/smartphone.jpg"
-class="drag-item"
-id="smartphone"
-draggable="true">
-
-<img src="../images/play.jpg"
-class="drag-item"
-id="play"
-draggable="true">
-
-<img src="../images/watch.jpg"
-class="drag-item"
-id="watch"
-draggable="true">
-
-<img src="../images/call.jpg"
-class="drag-item"
-id="call"
-draggable="true">
-
-<img src="../images/happy.jpg"
-class="drag-item"
-id="happy"
-draggable="true">
-
-<img src="../images/tired.jpg"
-class="drag-item"
-id="tired"
-draggable="true">
-
+<img src="../images/smartphone.jpg" class="drag-item" id="smartphone" draggable="true" ondragstart="drag(event)">
+<img src="../images/play.jpg" class="drag-item" id="play" draggable="true" ondragstart="drag(event)">
+<img src="../images/watch.jpg" class="drag-item" id="watch" draggable="true" ondragstart="drag(event)">
+<img src="../images/call.jpg" class="drag-item" id="call" draggable="true" ondragstart="drag(event)">
+<img src="../images/happy.jpg" class="drag-item" id="happy" draggable="true" ondragstart="drag(event)">
+<img src="../images/tired.jpg" class="drag-item" id="tired" draggable="true" ondragstart="drag(event)">
 </div>
-
-
 
 <div class="definition-grid">
 
-<div class="drop-box"
-data-answer="play">
-
-Have fun.
-
+<div class="drop-box" id="vgq1" data-answer="play" ondragover="allowDrop(event)" ondrop="dropVocab(event, 'vgq1', '💡 Hint: To play means to have fun!')">
+<span>Have fun.</span>
+<div class="feedback"></div>
 </div>
 
-<div class="drop-box"
-data-answer="tired">
-
-When you need to rest or sleep because you have little energy.
-
+<div class="drop-box" id="vgq2" data-answer="tired" ondragover="allowDrop(event)" ondrop="dropVocab(event, 'vgq2', '💡 Hint: Tired is when you need to sleep!')">
+<span>When you need to rest or sleep because you have little energy.</span>
+<div class="feedback"></div>
 </div>
 
-<div class="drop-box"
-data-answer="watch">
-
-To look at something carefully, like TV or a movie.
-
+<div class="drop-box" id="vgq3" data-answer="watch" ondragover="allowDrop(event)" ondrop="dropVocab(event, 'vgq3', '💡 Hint: Watch is looking at videos or TV!')">
+<span>To look at something carefully, like TV or a movie.</span>
+<div class="feedback"></div>
 </div>
 
-<div class="drop-box"
-data-answer="happy">
-
-Feeling very good and smiling.
-
+<div class="drop-box" id="vgq4" data-answer="happy" ondragover="allowDrop(event)" ondrop="dropVocab(event, 'vgq4', '💡 Hint: Happy means smiling and feeling good!')">
+<span>Feeling very good and smiling.</span>
+<div class="feedback"></div>
 </div>
 
-<div class="drop-box"
-data-answer="call">
-
-To talk to someone on the phone.
-
+<div class="drop-box" id="vgq5" data-answer="call" ondragover="allowDrop(event)" ondrop="dropVocab(event, 'vgq5', '💡 Hint: Call is talking on the phone!')">
+<span>To talk to someone on the phone.</span>
+<div class="feedback"></div>
 </div>
 
-<div class="drop-box"
-data-answer="smartphone">
-
-A smart mobile phone.
-
+<div class="drop-box" id="vgq6" data-answer="smartphone" ondragover="allowDrop(event)" ondrop="dropVocab(event, 'vgq6', '💡 Hint: A smartphone is a mobile phone!')">
+<span>A smart mobile phone.</span>
+<div class="feedback"></div>
 </div>
 
 </div>
 
 </div>
 
-<h3 id="vocabulary-result"></h3>
-
 </div>
-
-<!-- ===================================================== -->
-<!-- WARM UP -->
-<!-- ===================================================== -->
-
-<div class="section warmup-section">
-
-<h2>Warm-up</h2>
-
-<div class="warmup-box">
-
-<h3>Interaction Activity</h3>
-
-<p>
-
-📱 <strong>Teacher:</strong> Look, what is it?
-
-</p>
-
-<p>
-
-Expected answer:
-
-<strong>Smartphone</strong> or <strong>Phone</strong>
-
-</p>
-
-<br>
-
-<p>
-
-🙋 Raise your hand if you play games on a phone!
-
-</p>
-
-<p>
-
-🙋 Raise your hand if you watch videos!
-
-</p>
-
-<br>
-
-<p>
-
-📖 <strong>Introducing the reading:</strong>
-
-"This is Leo. Leo loves his smartphone. Let's read about him!"
-
-</p>
-
-</div>
-
-</div>
-
-
 
 <!-- ===================================================== -->
 <!-- READING TIME -->
@@ -1064,113 +666,24 @@ Expected answer:
 <h3>Leo and his Smartphone</h3>
 
 <div class="reading-buttons">
-
-<button onclick="playStory()">
-
-▶ Play
-
-</button>
-
-<button onclick="stopStory()">
-
-⏹ Stop
-
-</button>
-
-<button onclick="slowSpeed()">
-
-🐢 Slow
-
-</button>
-
-<button onclick="normalSpeed()">
-
-▶ Normal
-
-</button>
-
-<button onclick="fastSpeed()">
-
-⚡ Fast
-
-</button>
-
+<button onclick="playStory()">▶ Play</button>
+<button onclick="stopStory()">⏹ Stop</button>
+<button onclick="slowSpeed()">🐢 Slow</button>
+<button onclick="normalSpeed()">▶ Normal</button>
+<button onclick="fastSpeed()">⚡ Fast</button>
 </div>
 
-
-
 <div class="story-box" id="storyBox">
-
-<p>
-
-Leo has a new smartphone. It is blue.
-
-</p>
-
-<p>
-
-He plays video games on the phone. He is happy.
-
-</p>
-
-<p>
-
-He watches funny videos on the phone. He laughs!
-
-</p>
-
-<p>
-
-He calls his grandmother. He says,
-
-<b>"Hello Grandma!"</b>
-
-</p>
-
-<p>
-
-Mom says,
-
-<b>"Oh no! Leo, look at the time!"</b>
-
-</p>
-
-<p>
-
-But wait!
-
-It is 10 o'clock at night.
-
-</p>
-
-<p>
-
-Leo is still using the phone.
-
-</p>
-
-<p>
-
-The next day,
-
-Leo is very tired at school.
-
-</p>
-
-<p>
-
-His mom says,
-
-<b>"No more phone at night, Leo!"</b>
-
-</p>
-
-<p>
-
-Now Leo feels better.
-
-</p>
-
+<p>Leo has a new smartphone. It is blue.</p>
+<p>He plays video games on the phone. He is happy.</p>
+<p>He watches funny videos on the phone. He laughs!</p>
+<p>He calls his grandmother. He says, <b>"Hello Grandma!"</b></p>
+<p>Mom says, <b>"Oh no! Leo, look at the time!"</b></p>
+<p>But wait! It is 10 o'clock at night.</p>
+<p>Leo is still using the phone.</p>
+<p>The next day, Leo is very tired at school.</p>
+<p>His mom says, <b>"No more phone at night, Leo!"</b></p>
+<p>Now Leo feels better.</p>
 </div>
 
 </div>
@@ -1179,141 +692,69 @@ Now Leo feels better.
 <!-- ACTIVITY 1 : TRUE OR FALSE -->
 <!-- ===================================================== -->
 
-<div class="section">
+<div class="section" id="tfSection">
 
 <h2>Activity 1: True or False</h2>
+<p>Read each sentence and drag 👍 for <b>True</b> or 👎 for <b>False</b>.</p>
 
-<p>
-
-Read each sentence and drag 👍 for <b>True</b> or 👎 for <b>False</b>.
-
-</p>
+<button class="reset-btn" onclick="resetTF()">🔄 Try True/False Again</button>
 
 <div class="emoji-container">
 
 <div class="emoji-box">
-
 <h3>TRUE</h3>
-
-<span class="drag-answer"
-draggable="true"
-data-value="true">👍</span>
-
-<span class="drag-answer"
-draggable="true"
-data-value="true">👍</span>
-
-<span class="drag-answer"
-draggable="true"
-data-value="true">👍</span>
-
+<span class="drag-answer" draggable="true" id="handTrue1" data-value="true" ondragstart="drag(event)">👍</span>
+<span class="drag-answer" draggable="true" id="handTrue2" data-value="true" ondragstart="drag(event)">👍</span>
+<span class="drag-answer" draggable="true" id="handTrue3" data-value="true" ondragstart="drag(event)">👍</span>
 </div>
 
 <div class="emoji-box">
-
 <h3>FALSE</h3>
-
-<span class="drag-answer"
-draggable="true"
-data-value="false">👎</span>
-
-<span class="drag-answer"
-draggable="true"
-data-value="false">👎</span>
-
-<span class="drag-answer"
-draggable="true"
-data-value="false">👎</span>
-
+<span class="drag-answer" draggable="true" id="handFalse1" data-value="false" ondragstart="drag(event)">👎</span>
+<span class="drag-answer" draggable="true" id="handFalse2" data-value="false" ondragstart="drag(event)">👎</span>
+<span class="drag-answer" draggable="true" id="handFalse3" data-value="false" ondragstart="drag(event)">👎</span>
 </div>
 
 </div>
-
-
 
 <table class="tf-table">
 
 <tr>
-
 <th>Statement</th>
-
 <th>Answer</th>
-
 </tr>
 
 <tr>
-
+<td>The smartphone is red.</td>
 <td>
-
-The smartphone is red.
-
-</td>
-
-<td>
-
-<div
-class="drop-answer"
-data-answer="false">
-
-Drop Here
-
+<div class="drop-answer" id="tf1" data-answer="false" ondragover="allowDrop(event)" ondrop="dropTF(event, 'tf1', '💡 Hint: Read sentence 1! The smartphone is blue.')">
+<span>Drop Here</span>
+<div class="feedback"></div>
 </div>
-
 </td>
-
 </tr>
 
-
-
 <tr>
-
+<td>Leo calls his mother.</td>
 <td>
-
-Leo calls his mother.
-
-</td>
-
-<td>
-
-<div
-class="drop-answer"
-data-answer="false">
-
-Drop Here
-
+<div class="drop-answer" id="tf2" data-answer="false" ondragover="allowDrop(event)" ondrop="dropTF(event, 'tf2', '💡 Hint: Leo calls his grandmother!')">
+<span>Drop Here</span>
+<div class="feedback"></div>
 </div>
-
 </td>
-
 </tr>
 
-
-
 <tr>
-
+<td>Leo is happy at school the next morning.</td>
 <td>
-
-Leo is happy at school the next morning.
-
-</td>
-
-<td>
-
-<div
-class="drop-answer"
-data-answer="false">
-
-Drop Here
-
+<div class="drop-answer" id="tf3" data-answer="false" ondragover="allowDrop(event)" ondrop="dropTF(event, 'tf3', '💡 Hint: The next day Leo is very tired at school.')">
+<span>Drop Here</span>
+<div class="feedback"></div>
 </div>
-
 </td>
-
 </tr>
 
 </table>
-
-<h3 id="tf-result"></h3>
 
 </div>
 
@@ -1321,543 +762,514 @@ Drop Here
 <!-- ACTIVITY 2 : MAIN IDEA -->
 <!-- ===================================================== -->
 
-
-<div class="section">
+<div class="section" id="mainIdeaSection">
 
 <h2>Activity 2: Main Idea of this Story</h2>
+<p>Instruction: Choose the correct option.</p>
 
-<p>
+<button class="reset-btn" onclick="resetMainIdea()">🔄 Try Main Idea Again</button>
 
-Instruction: Choose the correct option.
+<div class="main-idea-container" id="act2">
 
-</p>
-
-
-<div class="main-idea-container">
-
-
-<div class="main-option"
-onclick="checkMainIdea(this,false)">
-
-
+<div class="main-option" id="optA2" onclick="checkMainIdea(this, 'act2', false, '💡 Hint: Playing all day is not healthy!')">
 <h3>Option A</h3>
-
-<p>
-
-Smartphones are only for playing games all day.
-
-</p>
-
-
+<p>Smartphones are only for playing games all day.</p>
 </div>
 
-
-
-<div class="main-option"
-onclick="checkMainIdea(this,true)">
-
-
+<div class="main-option" id="optB2" onclick="checkMainIdea(this, 'act2', true, '')">
 <h3>Option B</h3>
-
-<p>
-
-Smartphones are fun but we need to be healthy.
-
-</p>
-
+<p>Smartphones are fun but we need to be healthy.</p>
+</div>
 
 </div>
 
+<div class="feedback" id="act2Fb" style="text-align:center; margin-top:20px;"></div>
 
 </div>
-
-
-<h3 id="main-result"></h3>
-
-
-</div>
-
-
-
-
 
 <!-- ===================================================== -->
 <!-- ACTIVITY 3 : INFERENTIAL COMPREHENSION -->
 <!-- ===================================================== -->
 
-
-<div class="section">
-
+<div class="section" id="inferSection">
 
 <h2>Activity 3: Inferential Comprehension</h2>
+<p>Why did Mom say: "No more phone at night"?</p>
 
+<button class="reset-btn" onclick="resetInferential()">🔄 Try Inferential Again</button>
 
-<p>
+<div class="inferential-grid" id="act3">
 
-Why did Mom say: "No more phone at night"?
-
-</p>
-
-
-
-<div class="inferential-grid">
-
-
-
-<div class="infer-option"
-onclick="checkInferential(this,false)">
-
+<div class="infer-option" onclick="checkInferential(this, 'act3', false, '💡 Hint: Grandma does not call him late!')">
 <h3>Option A</h3>
-
-<p>
-
-His grandma calls him late.
-
-</p>
-
+<p>His grandma calls him late.</p>
 </div>
 
-
-
-
-<div class="infer-option"
-onclick="checkInferential(this,false)">
-
+<div class="infer-option" onclick="checkInferential(this, 'act3', false, '💡 Hint: Playing games is fun, but late night phone use made him tired!')">
 <h3>Option B</h3>
-
-<p>
-
-Leo likes to play games on the phone.
-
-</p>
-
+<p>Leo likes to play games on the phone.</p>
 </div>
 
-
-
-
-<div class="infer-option"
-onclick="checkInferential(this,true)">
-
+<div class="infer-option" onclick="checkInferential(this, 'act3', true, '')">
 <h3>Option C</h3>
-
-<p>
-
-Mom wants Leo to rest, sleep well and feel happy at school.
-
-</p>
+<p>Mom wants Leo to rest, sleep well and feel happy at school.</p>
+</div>
 
 </div>
 
-
+<div class="feedback" id="act3Fb" style="text-align:center; margin-top:20px;"></div>
 
 </div>
 
+<!-- ===================================================== -->
+<!-- ACTIVITY 4 : STORY SEQUENCING (NUEVA ACTIVIDAD) -->
+<!-- ===================================================== -->
 
-<h3 id="infer-result"></h3>
+<div class="section" id="seqSection">
 
+<h2>Activity 4: Story Sequence</h2>
+<p>What happened first, second, third, and fourth? Select the correct order (1, 2, 3, or 4).</p>
 
+<button class="reset-btn" onclick="resetSequence()">🔄 Try Sequence Again</button>
+
+<div class="sequence-container">
+
+<div class="seq-item" id="seq1Container">
+<span class="seq-text">Leo is very tired at school the next day.</span>
+<select class="seq-select" id="seq1" data-answer="3" onchange="checkSequence('seq1', 'seq1Container', '💡 Hint: Being tired happens the next day, after using the phone late at 10 PM.')">
+<option value="">Order?</option>
+<option value="1">1st</option>
+<option value="2">2nd</option>
+<option value="3">3rd</option>
+<option value="4">4th</option>
+</select>
+<div class="feedback"></div>
+</div>
+
+<div class="seq-item" id="seq2Container">
+<span class="seq-text">Leo gets a new blue smartphone and plays games.</span>
+<select class="seq-select" id="seq2" data-answer="1" onchange="checkSequence('seq2', 'seq2Container', '💡 Hint: First, Leo gets his new blue smartphone!')">
+<option value="">Order?</option>
+<option value="1">1st</option>
+<option value="2">2nd</option>
+<option value="3">3rd</option>
+<option value="4">4th</option>
+</select>
+<div class="feedback"></div>
+</div>
+
+<div class="seq-item" id="seq3Container">
+<span class="seq-text">Leo uses his phone late at 10 o'clock at night.</span>
+<select class="seq-select" id="seq3" data-answer="2" onchange="checkSequence('seq3', 'seq3Container', '💡 Hint: After playing and calling Grandma, it turns 10 PM at night!')">
+<option value="">Order?</option>
+<option value="1">1st</option>
+<option value="2">2nd</option>
+<option value="3">3rd</option>
+<option value="4">4th</option>
+</select>
+<div class="feedback"></div>
+</div>
+
+<div class="seq-item" id="seq4Container">
+<span class="seq-text">Mom says "No more phone at night" and Leo feels better.</span>
+<select class="seq-select" id="seq4" data-answer="4" onchange="checkSequence('seq4', 'seq4Container', '💡 Hint: This happens at the very end of the story!')">
+<option value="">Order?</option>
+<option value="1">1st</option>
+<option value="2">2nd</option>
+<option value="3">3rd</option>
+<option value="4">4th</option>
+</select>
+<div class="feedback"></div>
+</div>
+
+</div>
+
+</div>
+
+<!-- =====================================================
+SECTION FINAL SCORE / RÚBRICA DE ESTRELLAS
+===================================================== -->
+
+<div class="section">
+<button onclick="calculateFinalScore()" style="width:100%; padding:15px; font-size:18px; background:#1976d2; color:white; border:none; border-radius:15px; cursor:pointer; font-weight:bold;">
+🏆 Check Final Mission Score!
+</button>
+
+<div id="finalScoreResult" class="result-box">
+<div>🎉 Mission Completed!</div>
+<div id="finalScoreText"></div>
+<div id="finalStars" class="stars"></div>
+<div id="finalResultMessage"></div>
+<button class="retry-button" onclick="location.reload()">🔄 Play Again</button>
+</div>
 </div>
 
 <script>
 
-// =====================================
-// BACK HOME
-// =====================================
+/*=========================================
+TRACKING SCORES FOR RUBRIC
+=========================================*/
 
-function goHome(){
+let userFirstAttempts = {
+    vgq1: null, vgq2: null, vgq3: null, vgq4: null, vgq5: null, vgq6: null,
+    tf1: null, tf2: null, tf3: null,
+    act2: null, act3: null,
+    seq1: null, seq2: null, seq3: null, seq4: null
+};
 
-window.location.href="../index.html";
-
-}
-
-
-
-// =====================================
-// TEXT TO SPEECH VOCABULARY
-// =====================================
-
+/*=========================================
+AUDIO FUNCTIONS
+=========================================*/
 
 function speak(text){
-
-speechSynthesis.cancel();
-
-let voice = new SpeechSynthesisUtterance(text);
-
-voice.lang="en-US";
-
-voice.rate=0.9;
-
-speechSynthesis.speak(voice);
-
+    window.speechSynthesis.cancel();
+    let voice = new SpeechSynthesisUtterance(text);
+    voice.lang = "en-US";
+    voice.rate = 0.9;
+    window.speechSynthesis.speak(voice);
 }
 
-
-
-// =====================================
-// VOCABULARY DRAG AND DROP
-// =====================================
-
-
-let draggedWord=null;
-
-
-document.querySelectorAll(".drag-item").forEach(item=>{
-
-
-item.addEventListener("dragstart",function(){
-
-draggedWord=this;
-
-});
-
-
-});
-
-
-
-document.querySelectorAll(".drop-box").forEach(box=>{
-
-
-box.addEventListener("dragover",function(e){
-
-e.preventDefault();
-
-});
-
-
-
-box.addEventListener("drop",function(){
-
-
-let correct=this.dataset.answer;
-
-
-if(draggedWord.id===correct){
-
-
-this.classList.remove("incorrect");
-
-this.classList.add("correct");
-
-
-this.innerHTML="✅ Correct!";
-
-
-document.getElementById("vocabulary-result").innerHTML=
-"Excellent! 🎉";
-
-
+function playFeedbackAudio(text){
+    window.speechSynthesis.cancel();
+    let cleanText = text.replace(/<br>/gi, " ").replace(/<[^>]*>/g, "").replace(/[✅❌💡🎉⭐🏆]/g, "");
+    let speech = new SpeechSynthesisUtterance(cleanText);
+    speech.lang = "en-US";
+    speech.rate = 0.95;
+    window.speechSynthesis.speak(speech);
 }
 
-else{
+/*=========================================
+DRAG AND DROP HELPERS
+=========================================*/
 
+let draggedElement = null;
 
-this.classList.remove("correct");
-
-this.classList.add("incorrect");
-
-
-document.getElementById("vocabulary-result").innerHTML=
-"❌ Try Again!";
-
-
-setTimeout(()=>{
-
-this.classList.remove("incorrect");
-
-},1000);
-
-
+function drag(event){
+    draggedElement = event.target;
 }
 
+function allowDrop(event){
+    event.preventDefault();
+}
 
-});
+/*=========================================
+VOCABULARY GAME DRAG & DROP
+=========================================*/
 
+function dropVocab(event, qId, hintText){
+    event.preventDefault();
+    if(!draggedElement) return;
 
-});
+    const dropBox = document.getElementById(qId);
+    const feedback = dropBox.querySelector(".feedback");
 
+    if(dropBox.dataset.finished === "true") return;
 
+    let correct = dropBox.dataset.answer;
+    let isCorrect = (draggedElement.id === correct);
 
+    if(userFirstAttempts[qId] === null){
+        userFirstAttempts[qId] = isCorrect;
+    }
 
-// =====================================
-// READING TIME
-// =====================================
+    if(isCorrect){
+        dropBox.style.background = "#d4edda";
+        dropBox.style.borderColor = "green";
+        feedback.className = "feedback correct-fb";
+        feedback.innerHTML = "✅ Correct! Great job!";
+        dropBox.dataset.finished = "true";
+        draggedElement.style.display = "none";
+    } else {
+        dropBox.style.background = "#f8d7da";
+        dropBox.style.borderColor = "orange";
+        feedback.className = "feedback incorrect-fb";
+        feedback.innerHTML = "❌ Try Again!<br><span class='hint-box'>" + hintText + "</span>";
+    }
 
+    playFeedbackAudio(feedback.innerText);
+}
 
-let speed=1;
+function resetVocabulary(){
+    document.querySelectorAll("#vocabSection .drop-box").forEach(box => {
+        box.dataset.finished = "false";
+        box.style.background = "#f8fbff";
+        box.style.borderColor = "#64b5f6";
+        let fb = box.querySelector(".feedback");
+        fb.style.display = "none";
+        fb.className = "feedback";
+        fb.innerHTML = "";
+    });
+    document.querySelectorAll("#vocabSection .drag-item").forEach(img => {
+        img.style.display = "inline-block";
+    });
+}
 
+/*=========================================
+READING TIME
+=========================================*/
 
-let storyText=
-
-"Leo has a new smartphone. It is blue. "+
-"He plays video games on the phone. He is happy. "+
-"He watches funny videos on the phone. He laughs! "+
-"He calls his grandmother. He says Hello Grandma. "+
-"Mom says Oh no Leo, look at the time. "+
-"But wait. It is 10 o'clock at night. "+
-"Leo is still using the phone. "+
-"The next day, Leo is very tired at school. "+
-"His mom says No more phone at night Leo. "+
+let speed = 1;
+let storyText = "Leo has a new smartphone. It is blue. " +
+"He plays video games on the phone. He is happy. " +
+"He watches funny videos on the phone. He laughs! " +
+"He calls his grandmother. He says Hello Grandma. " +
+"Mom says Oh no Leo, look at the time. " +
+"But wait. It is 10 o'clock at night. " +
+"Leo is still using the phone. " +
+"The next day, Leo is very tired at school. " +
+"His mom says No more phone at night Leo. " +
 "Now Leo feels better.";
 
-
-
 function playStory(){
-
-
-speechSynthesis.cancel();
-
-
-let speech=new SpeechSynthesisUtterance(storyText);
-
-
-speech.lang="en-US";
-
-speech.rate=speed;
-
-
-speechSynthesis.speak(speech);
-
-
+    window.speechSynthesis.cancel();
+    let speech = new SpeechSynthesisUtterance(storyText);
+    speech.lang = "en-US";
+    speech.rate = speed;
+    window.speechSynthesis.speak(speech);
 }
-
-
-
 
 function stopStory(){
-
-speechSynthesis.cancel();
-
+    window.speechSynthesis.cancel();
 }
 
+function slowSpeed(){ speed = 0.5; }
+function normalSpeed(){ speed = 1; }
+function fastSpeed(){ speed = 1.5; }
 
+/*=========================================
+ACTIVITY 1 TRUE OR FALSE DRAG & DROP
+=========================================*/
 
-function slowSpeed(){
+function dropTF(event, qId, hintText){
+    event.preventDefault();
+    if(!draggedElement) return;
 
-speed=0.5;
+    const dropZone = document.getElementById(qId);
+    const feedback = dropZone.querySelector(".feedback");
 
+    if(dropZone.dataset.finished === "true") return;
+
+    let correct = dropZone.dataset.answer;
+    let student = draggedElement.dataset.value;
+    let isCorrect = (correct === student);
+
+    if(userFirstAttempts[qId] === null){
+        userFirstAttempts[qId] = isCorrect;
+    }
+
+    if(isCorrect){
+        dropZone.style.background = "#d4edda";
+        dropZone.style.borderColor = "green";
+        dropZone.querySelector("span").innerHTML = student === "true" ? "👍 True" : "👎 False";
+        feedback.className = "feedback correct-fb";
+        feedback.innerHTML = "✅ Correct!";
+        dropZone.dataset.finished = "true";
+    } else {
+        dropZone.style.background = "#f8d7da";
+        dropZone.style.borderColor = "orange";
+        feedback.className = "feedback incorrect-fb";
+        feedback.innerHTML = "❌ Try Again!<br><span class='hint-box'>" + hintText + "</span>";
+    }
+
+    playFeedbackAudio(feedback.innerText);
 }
 
-
-
-function normalSpeed(){
-
-speed=1;
-
+function resetTF(){
+    document.querySelectorAll("#tfSection .drop-answer").forEach(zone => {
+        zone.dataset.finished = "false";
+        zone.style.background = "#fafafa";
+        zone.style.borderColor = "#64b5f6";
+        zone.querySelector("span").innerHTML = "Drop Here";
+        let fb = zone.querySelector(".feedback");
+        fb.style.display = "none";
+        fb.className = "feedback";
+        fb.innerHTML = "";
+    });
 }
 
+/*=========================================
+ACTIVITY 2 MAIN IDEA
+=========================================*/
 
+function checkMainIdea(element, qId, isCorrect, hintText){
+    const container = document.getElementById(qId);
+    const feedback = document.getElementById("act2Fb");
 
-function fastSpeed(){
+    if(container.dataset.finished === "true") return;
 
-speed=1.5;
+    if(userFirstAttempts[qId] === null){
+        userFirstAttempts[qId] = isCorrect;
+    }
 
+    if(isCorrect){
+        element.style.background = "rgba(76, 175, 80, 0.35)";
+        element.style.border = "2px solid green";
+        feedback.className = "feedback correct-fb";
+        feedback.innerHTML = "✅ Excellent! That is the main idea!";
+        container.dataset.finished = "true";
+    } else {
+        element.style.background = "rgba(255, 165, 0, 0.35)";
+        element.style.border = "2px solid orange";
+        element.style.pointerEvents = "none";
+        feedback.className = "feedback incorrect-fb";
+        feedback.innerHTML = "❌ Try Again!<br><span class='hint-box'>" + hintText + "</span>";
+    }
+
+    playFeedbackAudio(feedback.innerText);
 }
 
-
-
-// =====================================
-// ACTIVITY 1 TRUE OR FALSE
-// =====================================
-
-
-let selectedHand=null;
-
-
-
-document.querySelectorAll(".drag-answer").forEach(hand=>{
-
-
-hand.addEventListener("dragstart",function(){
-
-selectedHand=this;
-
-});
-
-
-});
-
-
-
-
-
-document.querySelectorAll(".drop-answer").forEach(zone=>{
-
-
-zone.addEventListener("dragover",function(e){
-
-e.preventDefault();
-
-});
-
-
-
-zone.addEventListener("drop",function(){
-
-
-let correct=this.dataset.answer;
-
-let student=selectedHand.dataset.value;
-
-
-
-if(correct===student){
-
-
-this.classList.remove("wrong-drop");
-
-this.classList.add("correct-drop");
-
-
-this.innerHTML="👍";
-
-
-document.getElementById("tf-result").innerHTML=
-"✅ Correct!";
-
-
+function resetMainIdea(){
+    const container = document.getElementById("act2");
+    container.dataset.finished = "false";
+    const feedback = document.getElementById("act2Fb");
+    feedback.style.display = "none";
+    feedback.className = "feedback";
+    feedback.innerHTML = "";
+    container.querySelectorAll(".main-option").forEach(opt => {
+        opt.style.background = "white";
+        opt.style.border = "none";
+        opt.style.pointerEvents = "auto";
+    });
 }
 
-else{
+/*=========================================
+ACTIVITY 3 INFERENTIAL COMPREHENSION (FIXED VISUAL FEEDBACK)
+=========================================*/
 
+function checkInferential(element, qId, isCorrect, hintText){
+    const container = document.getElementById(qId);
+    const feedback = document.getElementById("act3Fb");
 
-this.classList.remove("correct-drop");
+    if(container.dataset.finished === "true") return;
 
-this.classList.add("wrong-drop");
+    if(userFirstAttempts[qId] === null){
+        userFirstAttempts[qId] = isCorrect;
+    }
 
+    if(isCorrect){
+        element.style.background = "rgba(76, 175, 80, 0.35)";
+        element.style.border = "2px solid green";
+        feedback.className = "feedback correct-fb";
+        feedback.innerHTML = "✅ Excellent! Brilliant thinking!";
+        container.dataset.finished = "true";
+    } else {
+        element.style.background = "rgba(255, 165, 0, 0.35)";
+        element.style.border = "2px solid orange";
+        element.style.pointerEvents = "none";
+        feedback.className = "feedback incorrect-fb";
+        feedback.innerHTML = "❌ Try Again!<br><span class='hint-box'>" + hintText + "</span>";
+    }
 
-this.innerHTML="❌";
-
-
-document.getElementById("tf-result").innerHTML=
-"❌ Try Again!";
-
-
-
-setTimeout(()=>{
-
-
-this.innerHTML="Drop Here";
-
-this.classList.remove("wrong-drop");
-
-
-},1000);
-
-
-
+    playFeedbackAudio(feedback.innerText);
 }
 
-
-
-});
-
-
-});
-
-
-
-
-// =====================================
-// ACTIVITY 2 MAIN IDEA
-// =====================================
-
-
-function checkMainIdea(element,answer){
-
-
-let result=document.getElementById("main-result");
-
-
-document.querySelectorAll(".main-option").forEach(option=>{
-
-option.classList.remove("correct-option");
-
-option.classList.remove("wrong-option");
-
-});
-
-
-
-if(answer){
-
-
-element.classList.add("correct-option");
-
-
-result.innerHTML="✅ Excellent!";
-
-
+function resetInferential(){
+    const container = document.getElementById("act3");
+    container.dataset.finished = "false";
+    const feedback = document.getElementById("act3Fb");
+    feedback.style.display = "none";
+    feedback.className = "feedback";
+    feedback.innerHTML = "";
+    container.querySelectorAll(".infer-option").forEach(opt => {
+        opt.style.background = "white";
+        opt.style.border = "none";
+        opt.style.pointerEvents = "auto";
+    });
 }
 
-else{
+/*=========================================
+ACTIVITY 4 STORY SEQUENCE
+=========================================*/
 
+function checkSequence(selectId, containerId, hintText){
+    const select = document.getElementById(selectId);
+    const container = document.getElementById(containerId);
+    const feedback = container.querySelector(".feedback");
 
-element.classList.add("wrong-option");
+    let val = select.value;
+    if(!val) return;
 
+    let correctVal = select.dataset.answer;
+    let isCorrect = (val === correctVal);
 
-result.innerHTML="❌ Try Again!";
+    if(userFirstAttempts[selectId] === null){
+        userFirstAttempts[selectId] = isCorrect;
+    }
 
+    if(isCorrect){
+        container.style.background = "#d4edda";
+        container.style.borderColor = "green";
+        select.disabled = true;
+        feedback.className = "feedback correct-fb";
+        feedback.innerHTML = "✅ Correct position!";
+    } else {
+        container.style.background = "#f8d7da";
+        container.style.borderColor = "orange";
+        feedback.className = "feedback incorrect-fb";
+        feedback.innerHTML = "❌ Try Again!<br><span class='hint-box'>" + hintText + "</span>";
+    }
 
+    playFeedbackAudio(feedback.innerText);
 }
 
+function resetSequence(){
+    for(let i=1; i<=4; i++){
+        let select = document.getElementById("seq" + i);
+        let container = document.getElementById("seq" + i + "Container");
+        let fb = container.querySelector(".feedback");
 
+        select.disabled = false;
+        select.value = "";
+        container.style.background = "#f8fbff";
+        container.style.borderColor = "#64b5f6";
+        fb.style.display = "none";
+        fb.className = "feedback";
+        fb.innerHTML = "";
+    }
 }
 
+/*=========================================
+CALCULATE FINAL SCORE & RÚBRICA
+=========================================*/
 
+function calculateFinalScore() {
+    let score = 0;
+    let totalQuestions = Object.keys(userFirstAttempts).length; // 15 preguntas en total
 
-// =====================================
-// ACTIVITY 3 INFERENTIAL
-// =====================================
+    Object.keys(userFirstAttempts).forEach(k => {
+        if(userFirstAttempts[k] === true) score++;
+    });
 
+    let resBox = document.getElementById("finalScoreResult");
+    let starsEl = document.getElementById("finalStars");
+    let scoreTextEl = document.getElementById("finalScoreText");
+    let msgEl = document.getElementById("finalResultMessage");
 
-function checkInferential(element,answer){
+    scoreTextEl.innerText = "Correct First Try Answers: " + score + " / " + totalQuestions;
 
+    if(score >= 12) {
+        resBox.className = "result-box excellent-result";
+        starsEl.innerText = "⭐⭐⭐";
+        msgEl.innerText = "Outstanding! You are a Smart Smartphone Master!";
+        playFeedbackAudio("Outstanding! You are a Smart Smartphone Master!");
+    } else if(score >= 8) {
+        resBox.className = "result-box good-result";
+        starsEl.innerText = "⭐⭐";
+        msgEl.innerText = "Good job! You completed most activities correctly!";
+        playFeedbackAudio("Good job! You completed most activities correctly!");
+    } else {
+        resBox.className = "result-box practice-result";
+        starsEl.innerText = "⭐";
+        msgEl.innerText = "Keep practicing! Read the story again and try once more!";
+        playFeedbackAudio("Keep practicing! Read the story again and try once more!");
+    }
 
-let result=document.getElementById("infer-result");
-
-
-
-document.querySelectorAll(".infer-option").forEach(option=>{
-
-option.classList.remove("infer-correct");
-
-option.classList.remove("infer-wrong");
-
-});
-
-
-
-if(answer){
-
-
-element.classList.add("infer-correct");
-
-
-result.innerHTML="✅ Excellent!";
-
-
-}
-
-else{
-
-
-element.classList.add("infer-wrong");
-
-
-result.innerHTML="❌ Try Again!";
-
-
-}
-
-
+    resBox.style.display = "block";
+    resBox.scrollIntoView({ behavior: 'smooth' });
 }
 
 </script>
 
-
-</body.>
+</body>
 
 </html>
-
